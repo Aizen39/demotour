@@ -1,2 +1,2 @@
-rootProject.name = "template-android"
+rootProject.name = "demoapp"
 include(":app")

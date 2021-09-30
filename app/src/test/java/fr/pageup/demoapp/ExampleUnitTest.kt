@@ -1,4 +1,4 @@
-package fr.pageup.template_android
+package fr.pageup.demoapp
 
 import org.junit.Assert.*
 import org.junit.Test

@@ -1,5 +1,5 @@
 object Configs {
-    const val applicationId = "fr.pageup.template"
+    const val applicationId = "fr.pageup.demoapp"
     const val compileSkdVersion = 30
     const val buildToolsVersion = "30.0.2"
     const val minSdkVersion = 21

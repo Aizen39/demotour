@@ -1,4 +1,4 @@
-package fr.pageup.template_android
+package fr.pageup.demoapp
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
