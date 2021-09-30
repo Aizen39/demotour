@@ -1,0 +1,29 @@
+#! /usr/bin/env python
+
+"""
+Git hook 'pre-commit' enforces branch naming policy.
+
+Before commit, the script get the branch name
+and match the :attr:`~libs.branching.PATTERN`.
+If the program exit with an error status, the commit is aborted.
+"""
+
+import sys
+
+from libs.colors import YELLOW, NO_COLOR
+from libs.branching import PATTERN, validate, git_branch
+
+ERROR = """
+Commit rejected !
+Branch names must adhere this contract :
+
+   {}{}{}
+
+Rename the branch to a valid name.
+""".format(YELLOW, PATTERN, NO_COLOR)
+
+if __name__ == '__main__':
+    if not validate(git_branch()) :
+        print(ERROR)
+        sys.exit(1)
+    sys.exit(0)

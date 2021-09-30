@@ -1,0 +1,4 @@
+QUALITY
+=======
+
+.. include:: QUALITY.md

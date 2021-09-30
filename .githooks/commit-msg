@@ -1,0 +1,143 @@
+#! /usr/bin/env python
+
+"""
+Git hook 'commit-msg' validate the commit message style.
+
+Load the COMMIT_EDITMSG file and inspect its content
+using :func:`~libs.message.check_rules`.
+Partial implementation of 7 rules (https://chris.beams.io/posts/git-commit/)
+
+Search format and style type :
+    - Missing subject ;
+    - Separate subject and body ;
+    - Limit subject to 50 characters ;
+    - Subject capitalized;
+    - No period at the end of the subject ;
+    - Body wrap in 72 characters.
+
+After writing and closing the editor, the script print issues if any.
+On Unix-like OS, the program ask for edit a new message,
+open the editor with a commented header revealed all previous errors.
+On Windows this feature is not supported yet.
+"""
+
+import sys
+import os
+import ctypes
+import platform
+
+from subprocess import call
+
+from libs.colors import YELLOW, NO_COLOR
+from libs.message import check_rules
+
+EDITOR="vim"
+
+COMMIT_EDITMSG_HEADER = """# COMMIT MESSAGE BREAKS THE FORMAT RULES :
+#                                                |                     |
+"""
+PREFIX_ERROR = "  [line {}]:"
+
+COMMIT_REJECTED = """
+Commit rejected !
+Message style breaks the following format rules :
+"""
+MSG_PROMPT = """
+Edit the commit message ? [y/n]
+"""
+
+def inspect(commit_editmsg):
+    """
+    Load file COMMIT_EDITMSG look for any format issues.
+
+    Call :func:`~libs.message.check_rules` and return the commit lines and the format errors.
+
+    :param commit_editmsg: git file 'COMMIT_EDITMSG'
+    :type commit_editmsg: str
+    :return: commit_msg and errors
+    :rtype: list
+    """
+    commit_msg = list()
+    errors = list()
+    with open(commit_editmsg) as commit_fd :
+        num_lines = sum(1 for line in open(commit_editmsg) if not line.startswith('#'))
+        for lineno, line in enumerate(commit_fd):
+            stripped_line = line.strip()
+            commit_msg.append(line)
+            error = check_rules(lineno, stripped_line, num_lines)
+            if error:
+                line_error = PREFIX_ERROR.format(lineno + 1)
+                errors.append("{} {}".format(line_error, error))
+    return commit_msg, errors
+
+def append_errors(commit_editmsg, commit_msg, errors):
+    """
+    Add format errors to COMMIT_EDITMSG.
+
+    Open the editor in write mode.
+    Print an general error message and a specific message for each occurences.
+    Then write errors and previous message in the COMMIT_EDITMSG file.
+
+    :param commit_editmsg: git file 'COMMIT_EDITMSG'
+    :type commit_editmsg: str
+    :param commit_msg: commit message lines
+    :type commit_msg: list
+    :param errors: pre-formated errors
+    :type erros: list
+    """
+    with open(commit_editmsg, 'w') as commit_fd:
+        commit_fd.write(COMMIT_EDITMSG_HEADER)
+        print(COMMIT_REJECTED)
+        for error in errors :
+            print(YELLOW + error + NO_COLOR)
+            commit_fd.write("# {}\n".format(error))
+        for line in commit_msg:
+            commit_fd.write(line)
+
+def validate(commit_editmsg):
+    """
+    Main logic function.
+
+    Mutual recursion with :func:`~commit_msg.ask_for_edit`, only for Unix-like systems.
+    On Windows, the script exit after :func:`~commit_msg.append_errors`
+    :param commit_editmsg: git file 'COMMIT_EDITMSG'
+    :type commit_editmsg: str
+    """
+    commit_msg, errors = inspect(commit_editmsg)
+    if errors:
+        append_errors(commit_editmsg, commit_msg, errors)
+        if platform.system().startswith('Win'):
+            sys.exit(1)
+        else:
+            ask_for_edit(commit_editmsg)
+    sys.exit(0)
+
+def ask_for_edit(commit_editmsg):
+    """
+    Ask user to edit COMMIT_EDITMSG.
+
+    Can reopen the editor with the updated content of the file (:func:`~commit_msg.append_errors`)
+    Used only for Unix-like systems.
+    Mutual recursion with :func:`~commit_msg.validate`.
+
+    :param msg_prompt: input blocking message
+    :type msg_prompt: str
+    :param commit_editmsg: git file 'COMMIT_EDITMSG'
+    :type commit_editmsg: str
+    """
+    sys.stdin = open('/dev/tty')
+    re_edit = input(MSG_PROMPT)
+    if re_edit.strip().lower() in ('n', 'no'):
+        print("Abort editing commit message !")
+        sys.exit(1)
+    else :
+        call("{} < /dev/tty {}".format(EDITOR, commit_editmsg), shell=True)
+        validate(commit_editmsg)
+
+if __name__ == '__main__':
+    if platform.system().startswith('Win'):
+        kernel32 = ctypes.windll.kernel32
+        kernel32.SetConsoleMode(kernel32.GetStdHandle(-11), 7)
+    if os.environ.get('EDITOR') is not None:
+        EDITOR = os.environ['EDITOR']
+    validate(sys.argv[1])
