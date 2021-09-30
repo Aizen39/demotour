@@ -78,9 +78,24 @@ dependencies {
     // Design
     implementation(Libs.material)
     implementation(Libs.constraintLayout)
+    implementation(Libs.recyclerView)
+    implementation(Libs.recyclerViewSelection)
+
+    // Jetpack
+    implementation(Libs.navigationFragment)
+    implementation(Libs.navigationUI)
+    implementation(Libs.lifecycleViewModel)
+    implementation(Libs.lifecycleLiveData)
+    implementation(Libs.lifecycleRunTime)
+    implementation(Libs.lifecycleSavedState)
+    kapt(Libs.kaptLifecycle)
+
+    // Third party
+    implementation(Libs.koin)
 
     // Test
     testImplementation(Libs.junit)
+    testImplementation(Libs.koinTest)
     androidTestImplementation(Libs.junitTest)
     androidTestImplementation(Libs.espressoCore)
 }

@@ -22,14 +22,12 @@ object Libs {
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompatVersion}"
 
     // Design
-    const val constraintLayout =
-        "androidx.constraintlayout:constraintlayout:${Versions.constraintLayoutVersion}"
+    const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayoutVersion}"
     const val material = "com.google.android.material:material:${Versions.materialVersion}"
     const val recyclerView =  "androidx.recyclerview:recyclerview:${Versions.recyclerviewVersion}"
     const val recyclerViewSelection = "androidx.recyclerview:recyclerview-selection:${Versions.recyclerviewSelectionVersion}"
 
     // Jetpack
-
     const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigationVersion}"
     const val navigationUI = "androidx.navigation:navigation-ui-ktx:$${Versions.navigationVersion}"
     const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleVersion}"
@@ -39,7 +37,6 @@ object Libs {
     const val kaptLifecycle = "androidx.lifecycle:lifecycle-compiler:${Versions.lifecycleVersion}"
 
     // Third party
-
     const val koin = "io.insert-koin:koin-android:${Versions.koinVersion}"
     const val timber = "com.jakewharton.timber:timber:${Versions.timberVersion}"
     const val moshi = "com.squareup.moshi:moshi:${Versions.moshiVersion}"
