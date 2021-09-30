@@ -83,7 +83,7 @@ dependencies {
 
     // Jetpack
     implementation(Libs.navigationFragment)
-    implementation(Libs.navigationUI)
+    //implementation(Libs.navigationUI)
     implementation(Libs.lifecycleViewModel)
     implementation(Libs.lifecycleLiveData)
     implementation(Libs.lifecycleRunTime)
