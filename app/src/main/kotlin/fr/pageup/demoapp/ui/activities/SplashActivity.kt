@@ -1,10 +1,11 @@
-package fr.pageup.demoapp
+package fr.pageup.demoapp.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import fr.pageup.demoapp.R
 
 /**
  * Simplement un splashscreen avec le logo de l'entreprise

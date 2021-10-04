@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/demoTourLoginFragment"
-        android:name="fr.pageup.demoapp.DemoTourLoginFragment"
+        android:name="fr.pageup.demoapp.ui.fragments.LoginFragment"
         android:label="DemoTourLoginFragment">
 
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/demoTourListFragment"
-        android:name="fr.pageup.demoapp.DemoTourListFragment"
+        android:name="fr.pageup.demoapp.ui.fragments.TourFragment"
         android:label="DemoTourListFragment" />
 
 </navigation>

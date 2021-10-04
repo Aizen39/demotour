@@ -1,11 +1,8 @@
-package fr.pageup.demoapp
+package fr.pageup.demoapp.ui
 
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentManager
-import androidx.navigation.fragment.NavHostFragment
+import fr.pageup.demoapp.R
 
 class MainActivity : AppCompatActivity() {
 
