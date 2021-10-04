@@ -22,6 +22,7 @@ android {
             keyPassword = KeyHelper.getValue(KeyHelper.KEY_PASS)
         }
     }
+    
 
     defaultConfig {
 
@@ -47,7 +48,14 @@ android {
                 "proguard-rules.pro"
             )
         }
+
     }
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -55,6 +63,7 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
+
     packagingOptions {
         exclude("META-INF/**")
     }
@@ -83,7 +92,7 @@ dependencies {
 
     // Jetpack
     implementation(Libs.navigationFragment)
-    //implementation(Libs.navigationUI)
+    implementation(Libs.navigationUI)
     implementation(Libs.lifecycleViewModel)
     implementation(Libs.lifecycleLiveData)
     implementation(Libs.lifecycleRunTime)
@@ -98,4 +107,6 @@ dependencies {
     testImplementation(Libs.koinTest)
     androidTestImplementation(Libs.junitTest)
     androidTestImplementation(Libs.espressoCore)
+
+
 }

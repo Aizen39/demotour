@@ -29,7 +29,7 @@ object Libs {
 
     // Jetpack
     const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigationVersion}"
-    const val navigationUI = "androidx.navigation:navigation-ui-ktx:$${Versions.navigationVersion}"
+    const val navigationUI = "androidx.navigation:navigation-ui-ktx:${Versions.navigationVersion}"
     const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleVersion}"
     const val lifecycleLiveData = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycleVersion}"
     const val lifecycleRunTime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleVersion}"
