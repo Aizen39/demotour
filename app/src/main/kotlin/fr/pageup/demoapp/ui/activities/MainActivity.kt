@@ -1,4 +1,4 @@
-package fr.pageup.demoapp.ui
+package fr.pageup.demoapp.ui.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

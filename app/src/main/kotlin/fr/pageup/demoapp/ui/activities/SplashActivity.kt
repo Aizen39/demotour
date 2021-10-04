@@ -1,4 +1,4 @@
-package fr.pageup.demoapp.ui
+package fr.pageup.demoapp.ui.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -18,7 +18,7 @@ class SplashActivity() : AppCompatActivity() {
     //Création de la vue
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.splash_activity)
+        setContentView(R.layout.activity_splash)
 
         //Lancement du MainActivity tardif
         Handler(Looper.getMainLooper()).postDelayed({

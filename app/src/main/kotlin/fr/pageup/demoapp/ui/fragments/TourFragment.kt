@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import fr.pageup.demoapp.R
 
-class ToursFragment : Fragment(){
+class TourFragment : Fragment(){
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.demo_tour_list_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_tour, container, false)
     }
 
 }

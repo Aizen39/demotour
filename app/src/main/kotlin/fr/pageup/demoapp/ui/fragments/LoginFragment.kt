@@ -8,15 +8,15 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import fr.pageup.demoapp.R
-import fr.pageup.demoapp.databinding.DemoTourLoginFragmentBinding
+import fr.pageup.demoapp.databinding.FragmentLoginBinding
 
-class DemoTourLoginFragment: Fragment() {
+class LoginFragment: Fragment() {
 
     //Create login fragment
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        val binding = DataBindingUtil.inflate<DemoTourLoginFragmentBinding>(inflater,
-            R.layout.demo_tour_login_fragment,container,false)
+        val binding = DataBindingUtil.inflate<FragmentLoginBinding>(inflater,
+            R.layout.fragment_login,container,false)
         binding.signIn.setOnClickListener {
             view:View -> view.findNavController().navigate(R.id.action_demoTourLoginFragment_to_demoTourListFragment)
         }
