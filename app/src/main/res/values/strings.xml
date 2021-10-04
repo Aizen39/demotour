@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">template-android</string>
+    <string name="app_name">Tournée de commandes</string>
+    <string name="mainactivity">Bonjour</string>
 </resources>
