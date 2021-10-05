@@ -1,3 +1,11 @@
 package fr.pageup.demoapp.data
 
-data class Customer(val id:Long, val firstname: String, val lastname: String)
+/**
+ * A customer has a name, a description and an image of his package
+ */
+data class Customer(
+    val firstname: String,
+    val lastname: String,
+    val description: String,
+    val img: Int
+)

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Tournée de commandes</string>
     <string name="mainactivity">Bonjour</string>
+    <string name="liste_de_commandes">liste de commandes</string>
 </resources>
