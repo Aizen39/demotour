@@ -14,7 +14,6 @@ private lateinit var linearLayoutManager: LinearLayoutManager
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
     }
 
 

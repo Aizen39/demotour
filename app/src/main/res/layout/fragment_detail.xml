@@ -13,6 +13,7 @@
 
         <LinearLayout
             android:orientation="horizontal"
+            android:padding="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageView
@@ -30,13 +31,15 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:gravity="center"/>
                 <TextView
                     android:id="@+id/delivery_description"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:layout_width="match_parent"
+                    android:gravity="center"
                     android:layout_height="wrap_content"/>
 
             </LinearLayout>
