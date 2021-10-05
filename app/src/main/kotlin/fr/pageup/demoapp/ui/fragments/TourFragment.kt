@@ -39,8 +39,8 @@ class TourFragment : Fragment(){
 
     /** set data*/
     fun listOrders(){
-        customersData.add(Customer("Page", "UP","Ordinateurs portable DELL", R.drawable.delivery_logo))
-        customersData.add(Customer("Delivery ", "UP","Voiture TESLA ", R.drawable.delivery_logo))
+        customersData.add(Customer("Page ", "UP","Ordinateurs portable DELL", R.drawable.delivery_logo))
+        customersData.add(Customer("Deliver ", "UP","Voiture TESLA ", R.drawable.delivery_logo))
 
     }
 

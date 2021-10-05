@@ -17,6 +17,7 @@ class TourAdapter(private val customersList: List<Customer>) :
 
 
     inner class TourViewHolder(v: View) : RecyclerView.ViewHolder(v) {
+
         var ordersName = v.findViewById<TextView>(R.id.delivery_name)
         var ordersDescription = v.findViewById<TextView>(R.id.delivery_description)
         var ordersLogo = v.findViewById<ImageView>(R.id.delivery_logo)
@@ -26,8 +27,8 @@ class TourAdapter(private val customersList: List<Customer>) :
     /** create and display each element from our model there, returning the viewholder class,
      * convert data into elements of recyclerview*/
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TourViewHolder {
-        var inflater = LayoutInflater.from(parent.context)
-        var v = inflater.inflate(R.layout.fragment_detail, parent, false)
+        val inflater = LayoutInflater.from(parent.context)
+        val v = inflater.inflate(R.layout.fragment_detail, parent, false)
         return TourViewHolder(v)
     }
 

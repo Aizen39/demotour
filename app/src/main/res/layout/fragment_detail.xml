@@ -2,6 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools">
+    
+    <data>
+        <variable
+            name="isItemsList"
+            type="fr.pageup.demoapp.data.Customer"/>
+    </data>
 
     <androidx.cardview.widget.CardView
         app:cardElevation="10dp"
@@ -18,6 +24,7 @@
             android:layout_height="wrap_content">
             <ImageView
                 android:id="@+id/delivery_logo"
+                android:src="@{isItemsList.img}"
                 android:layout_width="80dp"
                 android:layout_height="80dp"/>
             <LinearLayout
@@ -27,6 +34,7 @@
                 android:orientation="vertical">
                 <TextView
                     android:id="@+id/delivery_name"
+                    android:text="@{isItemsList.firstname + isItemsList.lastname}"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="20sp"
@@ -35,6 +43,7 @@
                     android:gravity="center"/>
                 <TextView
                     android:id="@+id/delivery_description"
+                    android:text="@{isItemsList.description}"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="16sp"
