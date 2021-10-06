@@ -43,13 +43,6 @@ class TourAdapter(private var c: Context, private val customersList: List<Custom
         holder.v.isItemsList = customersList
         //load logo
         holder.v.deliveryLogo.setImageResource(customersList.img)
-        /**var imgF :Int= fruitsLists.fruitsImg
-        var fruitsIntent = Intent(c,NewActivity::class.java)*/
-        var imgItem : Int = customersList.img
-        var itemItem = Intent(c,DescriptionFragment::class.java)
-        itemItem.putExtra("itemName",customersList.firstname)
-        itemItem.putExtra("itemName",customersList.lastname)
-        itemItem.putExtra("itemName",customersList.img)
 
     }
 
