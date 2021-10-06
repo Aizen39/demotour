@@ -41,7 +41,7 @@ class TourFragment : Fragment() {
     }
 
 
-    /** set data*/
+    /** set data without database*/
     private fun listOrders() {
         customersData.add(
             Customer(
