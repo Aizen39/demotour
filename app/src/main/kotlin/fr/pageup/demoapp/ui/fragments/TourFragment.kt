@@ -35,7 +35,7 @@ class TourFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_tour, container, false)
     }
 
-
+/** créer un tourviewmodel = transiter les données et tourrepository = give data */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val recycleView = view.findViewById<RecyclerView>(R.id.ordersRecycle)
