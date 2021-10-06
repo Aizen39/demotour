@@ -1,19 +1,20 @@
 package fr.pageup.demoapp.ui.viewmodels
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import fr.pageup.demoapp.R
 import fr.pageup.demoapp.data.Customer
 import fr.pageup.demoapp.databinding.FragmentDetailBinding
-import fr.pageup.demoapp.databinding.FragmentLoginBinding
 
-class TourAdapter(private val customersList: List<Customer>) :
+class TourAdapter(private var c: Context, private val customersList: List<Customer>) :
     RecyclerView.Adapter<TourAdapter.TourViewHolder>() {
 
 
@@ -35,6 +36,9 @@ class TourAdapter(private val customersList: List<Customer>) :
         holder.v.isItemsList = customersList
         //load logo
         holder.v.deliveryLogo.setImageResource(customersList.img)
+        holder.v.root.setOnClickListener {
+            Toast.makeText(c,"${holder.v.deliveryName} is Delivery Name", Toast.LENGTH_SHORT).show()
+        }
     }
 
     /** return the total numbers of customers of our recycleView*/

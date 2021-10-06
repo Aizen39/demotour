@@ -26,7 +26,7 @@ class TourFragment : Fragment() {
     ): View? {
         /**init*/
         customersData = ArrayList()
-        toursAdapter = TourAdapter(customersData)
+        toursAdapter = TourAdapter(requireContext(),customersData)
 
         /** set list*/
         listOrders()
