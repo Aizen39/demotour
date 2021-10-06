@@ -12,16 +12,20 @@ import fr.pageup.demoapp.data.Customer
 import fr.pageup.demoapp.ui.activities.MainActivity
 import fr.pageup.demoapp.ui.viewmodels.TourAdapter
 
-class TourFragment : Fragment(){
+class TourFragment : Fragment() {
 
     //add adapter
     private lateinit var toursAdapter: TourAdapter
     private lateinit var customersData: ArrayList<Customer>
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         /**init*/
-        customersData = ArrayList<Customer>()
+        customersData = ArrayList()
         toursAdapter = TourAdapter(customersData)
 
         /** set list*/
@@ -38,12 +42,49 @@ class TourFragment : Fragment(){
 
 
     /** set data*/
-    fun listOrders(){
-        customersData.add(Customer("Page ", "UP","Ordinateurs portable DELL", R.drawable.delivery_logo))
-        customersData.add(Customer("Deliver ", "UP","Voiture TESLA ", R.drawable.delivery_logo))
+    private fun listOrders() {
+        customersData.add(
+            Customer(
+                "Page ",
+                "UP",
+                "13 Rue Marguerite Yourcenar, 21000 Dijon",
+                R.drawable.page_up_logo
+            )
+        )
+        customersData.add(
+            Customer(
+                "Deliver ",
+                "UP",
+                "13 Rue Marguerite Yourcenar, 21000 Dijon",
+                R.drawable.deliver_up_logo
+            )
+        )
+        customersData.add(
+            Customer(
+                "Toison ",
+                "d'Or",
+                "Rte de Langres, 21000 Dijon",
+                R.drawable.toison_logo
+            )
+        )
+        customersData.add(
+            Customer(
+                "Carrefour Quetigny",
+                "",
+                "Av. de Bourgogne, 21800 Quetigny",
+                R.drawable.carrefour_logo
+            )
+        )
+        customersData.add(
+            Customer(
+                "McDonald's ",
+                "",
+                "10 Rue de Cracovie 21000 Dijon",
+                R.drawable.mcdo_logo
+            )
+        )
 
     }
-
 
 
 }

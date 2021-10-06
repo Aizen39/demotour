@@ -31,7 +31,10 @@ class TourAdapter(private val customersList: List<Customer>) :
      * in order to load in memory only the elements displayed on the screen
      */
     override fun onBindViewHolder(holder: TourViewHolder, position: Int) {
-        holder.v.isItemsList = customersList[position]
+        val customersList = customersList[position]
+        holder.v.isItemsList = customersList
+        //load logo
+        holder.v.deliveryLogo.setImageResource(customersList.img)
     }
 
     /** return the total numbers of customers of our recycleView*/

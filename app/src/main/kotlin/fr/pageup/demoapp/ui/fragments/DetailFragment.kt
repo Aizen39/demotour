@@ -15,7 +15,4 @@ class DetailFragment : Fragment(){
     ): View? {
         return super.onCreateView(inflater, container, savedInstanceState)
     }
-
-
-
 }
