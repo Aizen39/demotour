@@ -18,7 +18,7 @@ class TourAdapter(private val customers: List<Customer>, private val onItemClick
         val view = LayoutInflater.from(parent.context).inflate(R.layout.tour_item, parent, false)
         return TourViewHolder(view)
     }
-    
+
     /** this method will udpate our RecyclerView with the element's customer at a position
      * in order to load in memory only the elements displayed on the screen
      */
@@ -29,22 +29,21 @@ class TourAdapter(private val customers: List<Customer>, private val onItemClick
             onItemClickListener.onItemClick(customer)
         }
     }
-    
+
     /**
      *  @return total numbers of customers of our recycleView
      */
     override fun getItemCount() = customers.size
 
-    inner class TourViewHolder(val view: View): RecyclerView.ViewHolder(view) {
+    inner class TourViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         private val logo: ImageView = view.findViewById(R.id.logo)
         private val name: TextView = view.findViewById(R.id.name)
         private val address: TextView = view.findViewById(R.id.address)
-        
+
         fun setCustomer(customer: Customer) {
             logo.setImageResource(customer.img)
             name.text = customer.fullName()
             address.text = customer.address
         }
-    } 
-    
+    }
 }

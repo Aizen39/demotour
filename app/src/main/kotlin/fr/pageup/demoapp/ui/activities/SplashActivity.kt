@@ -12,19 +12,20 @@ import fr.pageup.demoapp.R
  */
 class SplashActivity() : AppCompatActivity() {
 
-    //temps de chargement du splash avant d'ouvrir le MainActivity
-    private val delay= 3000
+    // temps de chargement du splash avant d'ouvrir le MainActivity
+    private val delay = 3000
 
-    //Création de la vue
+    // Création de la vue
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        //Lancement du MainActivity tardif
+        // Lancement du MainActivity tardif
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }, delay.toLong())
+        }
     }
-}
+    

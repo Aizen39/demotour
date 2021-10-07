@@ -9,24 +9,21 @@ data class Customer(
     val address: String,
     val img: Int,
     val phoneNumber: Int = 0,
-    val comment: String = "") {
+    val comment: String = ""
+) {
 
     fun fullName() = "$firstname $lastname"
 }
 
 data class Orders(
     val idOrders: Int,
-    val ordersname:String,
+    val ordersname: String,
 )
 
 data class TrackMonitoring(
     val nbInterventions: Int,
-    //nbkm,dirée,prochain itnerventioon,,heure créneau et durée
-    val nbKm : Int,
-    val nbNextInterventions:Int,
+    // nbkm,dirée,prochain itnerventioon,,heure créneau et durée
+    val nbKm: Int,
+    val nbNextInterventions: Int,
 
 )
-
-
-
-

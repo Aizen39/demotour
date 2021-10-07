@@ -12,7 +12,7 @@ import fr.pageup.demoapp.databinding.FragmentListItemBinding
 
 class LoginFragment : Fragment() {
 
-    //Create login fragment
+    // Create login fragment
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
