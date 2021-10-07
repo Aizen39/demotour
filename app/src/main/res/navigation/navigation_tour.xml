@@ -20,10 +20,17 @@
         <action
             android:id="@+id/action_demoTourListFragment_to_descriptionFragment"
             app:destination="@id/descriptionFragment" />
+        <action
+            android:id="@+id/action_demoTourListFragment_to_demoTourLoginFragment"
+            app:destination="@id/demoTourLoginFragment" />
     </fragment>
     <fragment
         android:id="@+id/descriptionFragment"
         android:name="fr.pageup.demoapp.ui.fragments.DescriptionFragment"
-        android:label="DescriptionFragment" />
+        android:label="DescriptionFragment" >
+        <action
+            android:id="@+id/action_descriptionFragment_to_demoTourListFragment"
+            app:destination="@id/demoTourListFragment" />
+    </fragment>
 
 </navigation>

@@ -10,8 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Templateandroid">
         <activity
-            android:name=".ui.activities.MainActivity"
-            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
+            android:name=".ui.activities.MainActivity"/>
 
         <activity
             android:name=".ui.activities.SplashActivity"

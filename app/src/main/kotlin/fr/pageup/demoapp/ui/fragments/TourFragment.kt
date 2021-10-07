@@ -40,4 +40,5 @@ class TourFragment : Fragment(), OnItemClickListener<Customer> {
     override fun onItemClick(item: Customer) {
         findNavController().navigate(R.id.action_demoTourListFragment_to_descriptionFragment)
     }
+
 }
