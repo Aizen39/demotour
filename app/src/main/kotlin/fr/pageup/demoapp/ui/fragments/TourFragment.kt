@@ -5,37 +5,32 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import fr.pageup.demoapp.R
 import fr.pageup.demoapp.data.Customer
-import fr.pageup.demoapp.ui.activities.MainActivity
-import fr.pageup.demoapp.ui.viewmodels.TourAdapter
+import fr.pageup.demoapp.ui.adapters.OnItemClickListener
+import fr.pageup.demoapp.ui.adapters.TourAdapter
+import fr.pageup.demoapp.ui.viewmodels.TourViewModel
 
-class TourFragment : Fragment() {
+class TourFragment : Fragment(), OnItemClickListener<Customer> {
 
-    //add adapter
+    private val viewModel: TourViewModel by viewModels()
+
     private lateinit var toursAdapter: TourAdapter
-    private lateinit var customersData: ArrayList<Customer>
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        /**init*/
-        customersData = ArrayList()
-        toursAdapter = TourAdapter(requireContext(),customersData)
-
-        /** set list*/
-        listOrders()
-
+        toursAdapter = TourAdapter(viewModel.getCustomers(), this)
         return inflater.inflate(R.layout.fragment_tour, container, false)
     }
 
-/** créer un tourviewmodel = transiter les données et tourrepository = give data */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val recycleView = view.findViewById<RecyclerView>(R.id.ordersRecycle)
@@ -43,51 +38,7 @@ class TourFragment : Fragment() {
         recycleView.adapter = toursAdapter
     }
 
-
-    /** set data without database*/
-    private fun listOrders() {
-        customersData.add(
-            Customer(
-                "Page ",
-                "UP",
-                "13 Rue Marguerite Yourcenar, 21000 Dijon",
-                R.drawable.page_up_logo
-            )
-        )
-        customersData.add(
-            Customer(
-                "Deliver ",
-                "UP",
-                "13 Rue Marguerite Yourcenar, 21000 Dijon",
-                R.drawable.deliver_up_logo
-            )
-        )
-        customersData.add(
-            Customer(
-                "Toison ",
-                "d'Or",
-                "Rte de Langres, 21000 Dijon",
-                R.drawable.toison_logo
-            )
-        )
-        customersData.add(
-            Customer(
-                "Carrefour Quetigny",
-                "",
-                "Av. de Bourgogne, 21800 Quetigny",
-                R.drawable.carrefour_logo
-            )
-        )
-        customersData.add(
-            Customer(
-                "McDonald's ",
-                "",
-                "10 Rue de Cracovie 21000 Dijon",
-                R.drawable.mcdo_logo
-            )
-        )
-
+    override fun onItemClick(item: Customer) {
+        findNavController().navigate(R.id.action_demoTourListFragment_to_descriptionFragment)
     }
-
-
 }
