@@ -28,6 +28,5 @@ class LoginFragment : Fragment() {
                 .navigate(R.id.action_demoTourLoginFragment_to_demoTourListFragment)
         }
         return binding.root
-
     }
 }
