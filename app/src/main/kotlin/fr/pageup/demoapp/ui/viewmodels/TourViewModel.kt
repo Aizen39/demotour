@@ -8,37 +8,37 @@ class TourViewModel : ViewModel() {
 
     private var _customers = mutableListOf(
         Customer(
-            "Page ",
+            1233939,
             "UP",
+            ""
             "13 Rue Marguerite Yourcenar, 21000 Dijon",
-            R.drawable.page_up_logo
+
         ),
         Customer(
-            "Deliver ",
+            1233939,
             "UP",
             "13 Rue Marguerite Yourcenar, 21000 Dijon",
-            R.drawable.deliver_up_logo
+
         ),
 
         Customer(
-            "Toison ",
+            1233939,
             "d'Or",
             "Rte de Langres, 21000 Dijon",
-            R.drawable.toison_logo
+
 
         ),
         Customer(
-            "Carrefour Quetigny",
+            1233939,
             "",
             "Av. de Bourgogne, 21800 Quetigny",
-            R.drawable.carrefour_logo
+
 
         ),
         Customer(
-            "McDonald's ",
+            1233939,
             "",
             "10 Rue de Cracovie, 21000 Dijon",
-            R.drawable.mcdo_logo
 
         )
     )
