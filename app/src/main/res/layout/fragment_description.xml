@@ -18,7 +18,7 @@
             android:layout_width="300dp"
             android:layout_height="300dp"/>
         <TextView
-            android:id="@+id/packageName"
+            android:id="@+id/description_customer"
             android:text="@string/app_name"
             android:textSize="20sp"
             android:textStyle="bold"

@@ -7,13 +7,22 @@ import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import fr.pageup.demoapp.R
+import fr.pageup.demoapp.ui.viewmodels.TourViewModel
+import org.koin.android.ext.android.get
+import java.util.EnumSet.of
+import java.util.stream.Collector.of
+import java.util.stream.Stream.of
 
 class DescriptionFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_description, container, false)
     }
+
+
 }

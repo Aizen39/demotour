@@ -25,7 +25,7 @@ class LoginFragment : Fragment() {
         )
         binding.signIn.setOnClickListener { view: View ->
             view.findNavController()
-                .navigate(R.id.action_demoTourLoginFragment_to_demoTourListFragment)
+                .navigate(R.id.loginFragment_to_tourFragment)
         }
         return binding.root
     }

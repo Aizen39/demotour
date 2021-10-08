@@ -1,11 +1,15 @@
 package fr.pageup.demoapp.ui.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -21,6 +25,7 @@ class TourFragment : Fragment(), OnItemClickListener<Customer> {
 
     private lateinit var toursAdapter: TourAdapter
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -32,13 +37,15 @@ class TourFragment : Fragment(), OnItemClickListener<Customer> {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val recycleView = view.findViewById<RecyclerView>(R.id.ordersRecycle)
         recycleView.layoutManager = LinearLayoutManager(requireContext())
         recycleView.adapter = toursAdapter
     }
 
     override fun onItemClick(item: Customer) {
-        findNavController().navigate(R.id.action_demoTourListFragment_to_descriptionFragment)
+
+        findNavController().navigate(R.id.tourFragment_to_descriptionFragment)
     }
 
 }

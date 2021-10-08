@@ -37,7 +37,7 @@ class TourViewModel : ViewModel() {
         Customer(
             "McDonald's ",
             "",
-            "10 Rue de Cracovie 21000 Dijon",
+            "10 Rue de Cracovie, 21000 Dijon",
             R.drawable.mcdo_logo
 
         )

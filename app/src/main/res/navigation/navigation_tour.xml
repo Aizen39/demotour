@@ -2,35 +2,40 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/my_nav"
-    app:startDestination="@id/demoTourLoginFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
-        android:id="@+id/demoTourLoginFragment"
+        android:id="@+id/loginFragment"
         android:name="fr.pageup.demoapp.ui.fragments.LoginFragment"
         android:label="DemoTourLoginFragment">
 
         <action
-            android:id="@+id/action_demoTourLoginFragment_to_demoTourListFragment"
-            app:destination="@id/demoTourListFragment" />
+            android:id="@+id/loginFragment_to_tourFragment"
+            app:destination="@id/tourFragment" />
     </fragment>
     <fragment
-        android:id="@+id/demoTourListFragment"
+        android:id="@+id/tourFragment"
         android:name="fr.pageup.demoapp.ui.fragments.TourFragment"
         android:label="DemoTourListFragment" >
         <action
-            android:id="@+id/action_demoTourListFragment_to_descriptionFragment"
+            android:id="@+id/tourFragment_to_descriptionFragment"
+            android:name="tourAction"
             app:destination="@id/descriptionFragment" />
         <action
-            android:id="@+id/action_demoTourListFragment_to_demoTourLoginFragment"
-            app:destination="@id/demoTourLoginFragment" />
+            android:id="@+id/tourFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/descriptionFragment"
         android:name="fr.pageup.demoapp.ui.fragments.DescriptionFragment"
         android:label="DescriptionFragment" >
         <action
-            android:id="@+id/action_descriptionFragment_to_demoTourListFragment"
-            app:destination="@id/demoTourListFragment" />
+            android:id="@+id/descriptionFragment_to_tourFragment"
+            app:destination="@id/tourFragment" />
+        <argument
+            android:name="customer_data"
+            app:argType="fr.pageup.demoapp.data.Customer" />
+
     </fragment>
 
 </navigation>
