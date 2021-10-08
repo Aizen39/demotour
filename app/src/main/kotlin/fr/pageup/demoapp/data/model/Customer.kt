@@ -18,16 +18,3 @@ data class Customer(
 
     fun fullName() = "$firstname $lastname"
 }
-
-data class Orders(
-    val idOrders: Int,
-    val ordersname: String,
-)
-
-data class TrackMonitoring(
-    val nbInterventions: Int,
-    // nbkm,dirée,prochain itnerventioon,,heure créneau et durée
-    val nbKm: Int,
-    val nbNextInterventions: Int,
-
-)

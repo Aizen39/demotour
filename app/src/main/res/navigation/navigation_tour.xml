@@ -24,6 +24,9 @@
         <action
             android:id="@+id/tourFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <argument
+            android:name="tourFrag"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/descriptionFragment"
@@ -33,7 +36,7 @@
             android:id="@+id/descriptionFragment_to_tourFragment"
             app:destination="@id/tourFragment" />
         <argument
-            android:name="customer_data"
+            android:name="customer"
             app:argType="fr.pageup.demoapp.data.Customer" />
 
     </fragment>

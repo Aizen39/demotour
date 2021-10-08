@@ -3,6 +3,7 @@ plugins {
     id("kotlin-android")
     id ("kotlin-kapt")
     id ("kotlin-parcelize")
+    id("androidx.navigation.safeargs")
     id ("io.gitlab.arturbosch.detekt").version(Versions.detektVersion)
 }
 
