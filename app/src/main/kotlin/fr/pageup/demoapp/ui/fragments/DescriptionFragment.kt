@@ -29,8 +29,16 @@ class DescriptionFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_description, container, false)
-        val firstN : TextView = view.findViewById(R.id.firstname)
-        firstN.text = args.customer.fullName()
+        val nameCustomer : TextView = view.findViewById(R.id.firstname)
+        val addressCustomer : TextView = view.findViewById(R.id.address)
+        val idReference : TextView = view.findViewById(R.id.order_reference)
+        val zipCode : TextView = view.findViewById(R.id.zipcode)
+        val town : TextView = view.findViewById(R.id.town)
+        nameCustomer.text = args.customer.name
+        addressCustomer.text = args.customer.address
+        idReference.text = args.customer.idPackage.toString()
+        zipCode.text = args.customer.zipCode.toString()
+        town.text = args.customer.town
         return view
     }
 

@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/back"
-    android:gravity="top"
-    android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="50dp"
+    android:background="@color/back">
+
+    <TextView
+        android:id="@+id/order_reference"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:hint="order reference"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,30 +21,20 @@
 
         <TextView
             android:id="@+id/firstname"
-            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            tools:text="First Name" />
-
-        <TextView
-            android:id="@+id/lastname"
             android:textColor="@color/white"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            tools:text="Last Name" />
-
+            android:hint="name"/>
 
     </LinearLayout>
 
     <TextView
         android:id="@+id/address"
         android:layout_width="match_parent"
-        android:textColor="@color/white"
         android:layout_height="wrap_content"
-        android:text="Address" />
-
+        android:textColor="@color/white"
+        android:hint="Address"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,19 +42,20 @@
 
         <TextView
             android:id="@+id/zipcode"
-            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="zip code" />
+            android:layout_weight="0.1"
+            android:textColor="@color/white"
+            android:hint="zip code"/>
 
         <TextView
             android:id="@+id/town"
-            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="town" />
+            android:textColor="@color/white"
+            android:hint="Town"/>
+
     </LinearLayout>
 
     <Button
@@ -66,5 +64,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginStart="150dp"
+        android:textColor="@color/white"
         android:text="OK"/>
 </LinearLayout>

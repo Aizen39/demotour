@@ -1,5 +1,6 @@
 package fr.pageup.demoapp.ui.adapters
 
+import android.graphics.drawable.Icon
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,13 +37,13 @@ class TourAdapter(private val customers: List<Customer>, private val onItemClick
     override fun getItemCount() = customers.size
 
     inner class TourViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
-        //private val logo: ImageView = view.findViewById(R.id.logo)
+        private val logo: ImageView = view.findViewById(R.id.logo)
         private val name: TextView = view.findViewById(R.id.name)
         private val address: TextView = view.findViewById(R.id.address)
 
         fun setCustomer(customer: Customer) {
-            //logo.setImageResource(R.drawable.outline_local_shipping_black_18)
-            name.text = customer.fullName()
+            logo.setImageResource(R.drawable.outline_local_shipping_black_18)
+            name.text = customer.name
             address.text = customer.address
         }
     }

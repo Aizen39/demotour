@@ -8,14 +8,11 @@ import kotlinx.parcelize.Parcelize
  */
 @Parcelize
 data class Customer(
-    val idPackage : Long,
-    val firstname: String,
-    val lastname: String,
+    val idPackage : Short,
+    val name: String,
     val address: String,
-    val zipCode: Long,
+    val zipCode: String,
     val town: String,
-    val phone: Long,
+    val phone: String,
 ) : Parcelable {
-
-    fun fullName() = "$firstname $lastname"
 }
