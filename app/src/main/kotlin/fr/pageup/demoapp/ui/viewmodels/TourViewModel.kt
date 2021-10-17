@@ -9,37 +9,33 @@ class TourViewModel : ViewModel() {
     private var _customers = mutableListOf(
         Customer(
             1233939,
+            "Page",
             "UP",
-            ""
-            "13 Rue Marguerite Yourcenar, 21000 Dijon",
+            "13 Rue Marguerite Yourcenar",
+            21000,
+            "Dijon",
+            0
 
         ),
         Customer(
             1233939,
             "UP",
-            "13 Rue Marguerite Yourcenar, 21000 Dijon",
+            "Deliver UP",
+            "13 Rue Marguerite Yourcenar",
+            21000,
+            "Dijon",
+            0
 
         ),
 
         Customer(
             1233939,
-            "d'Or",
-            "Rte de Langres, 21000 Dijon",
-
-
-        ),
-        Customer(
-            1233939,
-            "",
-            "Av. de Bourgogne, 21800 Quetigny",
-
-
-        ),
-        Customer(
-            1233939,
-            "",
-            "10 Rue de Cracovie, 21000 Dijon",
-
+            "Toison",
+            "D'or",
+            "13 Rue Marguerite Yourcenar",
+            21000,
+            "Dijon",
+            0
         )
     )
 

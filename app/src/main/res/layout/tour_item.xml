@@ -21,10 +21,9 @@
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingEnd="30dp"
-            android:gravity="end"
-            android:text="first name"
-            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="Anthony"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -32,9 +31,9 @@
             android:id="@+id/address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="end"
-            android:text="description"
-            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="address"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold" />
 

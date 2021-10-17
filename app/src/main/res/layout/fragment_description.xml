@@ -1,41 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:background="@color/beige"
-    android:gravity="center">
+    android:background="@color/back"
+    android:gravity="top"
+    android:orientation="vertical">
 
     <LinearLayout
-        android:orientation="vertical"
-        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/imgDescription"
-            android:src="@drawable/logo"
-            android:layout_width="300dp"
-            android:layout_height="300dp"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
         <TextView
-            android:id="@+id/description_customer"
-            android:text="@string/app_name"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:id="@+id/firstname"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="First Name" />
+
         <TextView
-            android:id="@+id/packageInfo"
-            android:text="@string/app_name"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/darker_gray"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:id="@+id/lastname"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="Last Name" />
+
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="match_parent"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        android:text="Address" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/zipcode"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="zip code" />
+
+        <TextView
+            android:id="@+id/town"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="town" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginStart="150dp"
+        android:text="OK"/>
 </LinearLayout>
