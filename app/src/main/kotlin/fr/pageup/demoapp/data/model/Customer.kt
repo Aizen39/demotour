@@ -8,7 +8,7 @@ import kotlinx.parcelize.Parcelize
  */
 @Parcelize
 data class Customer(
-    val idPackage : Short,
+    val idCustomer : Short,
     val name: String,
     val address: String,
     val zipCode: String,

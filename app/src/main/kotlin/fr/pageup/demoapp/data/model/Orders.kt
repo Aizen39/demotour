@@ -1,7 +1,14 @@
 package fr.pageup.demoapp.data.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Orders(
-    val ref : String,
+    val idOrder : Short,
     val productName : String,
-    val quantity : String
-)
+    val quantity : Short
+) : Parcelable{
+}
+
+

@@ -3,6 +3,7 @@ package fr.pageup.demoapp.ui.viewmodels
 import androidx.lifecycle.ViewModel
 import fr.pageup.demoapp.R
 import fr.pageup.demoapp.data.Customer
+import fr.pageup.demoapp.data.model.Orders
 
 class TourViewModel : ViewModel() {
 
@@ -33,6 +34,25 @@ class TourViewModel : ViewModel() {
             "39100",
             "Dole",
             "0645875634"
+        )
+    )
+
+    private var _order = mutableListOf(
+        Orders(
+            17837,
+            "Computer",
+            5
+
+        ),
+        Orders(
+            28793,
+            "meat",
+            100
+        ),
+        Orders(
+            28983,
+            "Potatoe",
+            300
         )
     )
 

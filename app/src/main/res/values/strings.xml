@@ -2,6 +2,6 @@
     <string name="app_name">Tournée de commandes</string>
     <string name="mainactivity">Bonjour</string>
     <string name="liste_de_commandes">liste de commandes</string>
-    <string name="name_package">Voici la tournée de vos commandes</string>
+    <string name="name_package">Check your delivery</string>
     <string name="start">Let\'s start...</string>
 </resources>

@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Anthony"
-            android:textColor="@color/white"
+            android:textColor="@color/back"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="address"
-            android:textColor="@color/white"
+            android:textColor="@color/back"
             android:textSize="16sp"
             android:textStyle="bold" />
 

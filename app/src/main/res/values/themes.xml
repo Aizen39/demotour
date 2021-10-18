@@ -16,6 +16,6 @@
 
     <!-- Style pour le splash -->
     <style name="splashScreenTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
-        <item name="android:windowBackground">@drawable/logo</item>
+        <item name="android:windowBackground">@drawable/new_logo</item>
     </style>
 </resources>

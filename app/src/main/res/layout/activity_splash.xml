@@ -11,7 +11,7 @@
         android:id="@+id/logo_splash"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/logoproject"
-        android:background="@color/back"/>
+        android:src="@drawable/new_logo"
+        android:background="@color/white"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

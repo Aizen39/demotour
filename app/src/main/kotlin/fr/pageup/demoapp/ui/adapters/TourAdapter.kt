@@ -1,6 +1,5 @@
 package fr.pageup.demoapp.ui.adapters
 
-import android.graphics.drawable.Icon
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,8 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import fr.pageup.demoapp.R
 import fr.pageup.demoapp.data.Customer
+import fr.pageup.demoapp.data.model.Orders
 
-class TourAdapter(private val customers: List<Customer>, private val onItemClickListener: OnItemClickListener<Customer>) :
+class TourAdapter(private val customers: MutableList<Customer>, private val onItemClickListener: OnItemClickListener<Customer>) :
     RecyclerView.Adapter<TourAdapter.TourViewHolder>() {
 
     /** create and display each element from our model there, returning the viewholder class,
@@ -41,10 +41,13 @@ class TourAdapter(private val customers: List<Customer>, private val onItemClick
         private val name: TextView = view.findViewById(R.id.name)
         private val address: TextView = view.findViewById(R.id.address)
 
+
+
         fun setCustomer(customer: Customer) {
-            logo.setImageResource(R.drawable.outline_local_shipping_black_18)
+            logo.setImageResource(R.drawable.ic_schedule_black_18dp)
             name.text = customer.name
             address.text = customer.address
         }
+
     }
 }

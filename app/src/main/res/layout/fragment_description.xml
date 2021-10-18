@@ -5,18 +5,19 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:padding="50dp"
-    android:background="@color/back">
+    android:layout_marginTop="100dp">
 
     <TextView
         android:id="@+id/order_reference"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
+        android:textColor="@color/back"
         android:hint="order reference"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal">
 
         <TextView
@@ -24,28 +25,38 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@color/white"
+            android:textColor="@color/back"
             android:hint="name"/>
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/address"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:hint="Address"/>
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/back"
+            android:hint="Address"/>
+
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
 
         <TextView
             android:id="@+id/zipcode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.1"
-            android:textColor="@color/white"
+            android:textColor="@color/back"
             android:hint="zip code"/>
 
         <TextView
@@ -53,17 +64,64 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@color/white"
+            android:textColor="@color/back"
             android:hint="Town"/>
 
     </LinearLayout>
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/idOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="ID ORDER"/>
+        <TextView
+            android:id="@+id/idLabelOrder"
+            android:paddingStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="LABEL"/>
+        <TextView
+            android:id="@+id/idQuantity"
+            android:paddingStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="QUANTITY"/>
+    </LinearLayout>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/phone_logo"/>
+
+        <TextView
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:textColor="@color/back"/>
+
+    </LinearLayout>
+
+
 
     <Button
         android:id="@+id/btn_ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginStart="150dp"
-        android:textColor="@color/white"
-        android:text="OK"/>
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:text="Done"
+        android:textColor="@color/white" />
 </LinearLayout>

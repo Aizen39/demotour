@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="fr.pageup.demoapp.ui.fragments.LoginFragment"
-        android:label="DemoTourLoginFragment">
+        android:label="Login">
 
         <action
             android:id="@+id/loginFragment_to_tourFragment"
@@ -16,7 +16,7 @@
     <fragment
         android:id="@+id/tourFragment"
         android:name="fr.pageup.demoapp.ui.fragments.TourFragment"
-        android:label="DemoTourListFragment" >
+        android:label="Your list" >
         <action
             android:id="@+id/tourFragment_to_descriptionFragment"
             android:name="tourAction"
@@ -31,7 +31,7 @@
     <fragment
         android:id="@+id/descriptionFragment"
         android:name="fr.pageup.demoapp.ui.fragments.DescriptionFragment"
-        android:label="DescriptionFragment" >
+        android:label="Details" >
         <action
             android:id="@+id/descriptionFragment_to_tourFragment"
             app:destination="@id/tourFragment" />
