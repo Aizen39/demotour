@@ -7,6 +7,7 @@
     android:padding="50dp"
     android:layout_marginTop="100dp">
 
+
     <TextView
         android:id="@+id/order_reference"
         android:layout_width="wrap_content"
