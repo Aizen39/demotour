@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import fr.pageup.demoapp.R
-import fr.pageup.demoapp.databinding.FragmentListItemBinding
 
 class LoginFragment : Fragment() {
 
@@ -18,15 +18,12 @@ class LoginFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        val binding = DataBindingUtil.inflate<FragmentListItemBinding>(
-            inflater,
-            R.layout.fragment_list_item, container, false
-        )
-        binding.signIn.setOnClickListener { view: View ->
+        val page = inflater.inflate(R.layout.fragment_login, container, false)
+        val loginbtn : Button = page.findViewById(R.id.loginBtn)
+        loginbtn.setOnClickListener { view: View ->
             view.findNavController()
                 .navigate(R.id.loginFragment_to_tourFragment)
         }
-        return binding.root
+        return page
     }
 }
