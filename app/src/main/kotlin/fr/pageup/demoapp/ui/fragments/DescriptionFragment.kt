@@ -5,12 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.navArgs
 import fr.pageup.demoapp.databinding.FragmentDescriptionBinding
+import fr.pageup.demoapp.ui.viewmodels.DescriptionViewModel
 
 class DescriptionFragment : Fragment() {
 
     private val args: DescriptionFragmentArgs by navArgs()
+
+    private val viewModel: DescriptionViewModel by viewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding = FragmentDescriptionBinding.inflate(inflater,container,false)
@@ -21,6 +26,8 @@ class DescriptionFragment : Fragment() {
             zipcode.text = args.customer.zipCode
             town.text = args.customer.town
             phone.text = args.customer.phone
+
+
         }
         return binding.root
     }
