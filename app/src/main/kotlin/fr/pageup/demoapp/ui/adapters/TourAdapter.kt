@@ -44,7 +44,7 @@ class TourAdapter(private val customers: MutableList<Customer>, private val onIt
 
 
         fun setCustomer(customer: Customer) {
-            logo.setImageResource(R.drawable.ic_schedule_black_18dp)
+            logo.setImageResource(R.drawable.time)
             name.text = customer.name
             address.text = customer.address
         }

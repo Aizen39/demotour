@@ -24,20 +24,21 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val v = inflater.inflate(R.layout.fragment_login, container, false)
-        val loginbtn: Button = v.findViewById(R.id.loginBtn)
-        val edit_email: EditText = v.findViewById(R.id.email)
-        val edit_pw: EditText = v.findViewById(R.id.password)
-
-        /*if (edit_email.text.toString() == viewModel.getUseremail() && edit_pw.text.toString() == viewModel.getUserPw()) {
-
-        }*/
-
-        loginbtn.setOnClickListener { view: View ->
-            view.findNavController()
-                .navigate(R.id.loginFragment_to_tourFragment)
-        }
         return v
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val loginbtn: Button = view.findViewById(R.id.loginBtn)
+        val editEmail: EditText = view.findViewById(R.id.email)
+        val editPassword: EditText = view.findViewById(R.id.password)
+        loginbtn.setOnClickListener { view : View ->
+            val txt: String = editEmail.text.toString()
+            val mdp: String = editPassword.text.toString()
+            if(txt == viewModel.getUseremail() && mdp == viewModel.getUserPw()){
+                view.findNavController().navigate(R.id.loginFragment_to_tourFragment)
+            }
+        }
+    }
 
 }
