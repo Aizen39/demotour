@@ -46,4 +46,6 @@ class TourFragment : Fragment(), OnItemClickListener<Customer> {
     }
 
 
+
+
 }

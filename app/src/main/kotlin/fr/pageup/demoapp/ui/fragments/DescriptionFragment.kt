@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.navArgs
 import fr.pageup.demoapp.databinding.FragmentDescriptionBinding
 import fr.pageup.demoapp.ui.viewmodels.DescriptionViewModel
@@ -26,11 +25,15 @@ class DescriptionFragment : Fragment() {
             zipcode.text = args.customer.zipCode
             town.text = args.customer.town
             phone.text = args.customer.phone
-
-
+            idOrderText.text = args.customer.idOrder.toString()
+            //idOrderText.text = viewModel.getOrder0().idOrder.toString()
+            idLabelOrder.text = args.customer.productName
+            idQuantity.text = args.customer.quantity.toString()
         }
+
         return binding.root
     }
+
 
 
 }

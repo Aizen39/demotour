@@ -14,5 +14,8 @@ data class Customer(
     val zipCode: String,
     val town: String,
     val phone: String,
+    val idOrder : Short,
+    val productName : String,
+    val quantity : Short
 ) : Parcelable {
 }

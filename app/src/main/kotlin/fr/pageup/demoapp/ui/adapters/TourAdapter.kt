@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import fr.pageup.demoapp.R
 import fr.pageup.demoapp.data.Customer
-import fr.pageup.demoapp.data.model.Orders
+
 
 class TourAdapter(private val customers: MutableList<Customer>, private val onItemClickListener: OnItemClickListener<Customer>) :
     RecyclerView.Adapter<TourAdapter.TourViewHolder>() {
