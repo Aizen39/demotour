@@ -24,6 +24,6 @@ class DescriptionViewModel: ViewModel() {
 
     )
 
-    fun getOrder0() = _orders[0]
+    fun getOrders() = _orders
 
 }
