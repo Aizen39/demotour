@@ -37,24 +37,5 @@ class TourViewModel : ViewModel() {
         )
     )
 
-    private var _order = mutableListOf(
-        Orders(
-            17837,
-            "Computer",
-            5
-
-        ),
-        Orders(
-            28793,
-            "meat",
-            100
-        ),
-        Orders(
-            28983,
-            "Potatoe",
-            300
-        )
-    )
-
     fun getCustomers() = _customers
 }
