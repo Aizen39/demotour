@@ -28,11 +28,13 @@ class LoginFragment : Fragment() {
         val edit_email: EditText = v.findViewById(R.id.email)
         val edit_pw: EditText = v.findViewById(R.id.password)
 
-        if (edit_email.text.toString() == viewModel.getUseremail() && edit_pw.text.toString() == viewModel.getUserPw()) {
-            loginbtn.setOnClickListener { view: View ->
-                view.findNavController()
-                    .navigate(R.id.loginFragment_to_tourFragment)
-            }
+        /*if (edit_email.text.toString() == viewModel.getUseremail() && edit_pw.text.toString() == viewModel.getUserPw()) {
+
+        }*/
+
+        loginbtn.setOnClickListener { view: View ->
+            view.findNavController()
+                .navigate(R.id.loginFragment_to_tourFragment)
         }
         return v
     }
