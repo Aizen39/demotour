@@ -1,4 +1,4 @@
-package fr.pageup.demoapp.data
+package fr.pageup.demoapp.data.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
@@ -8,14 +8,9 @@ import kotlinx.parcelize.Parcelize
  */
 @Parcelize
 data class Customer(
-    val idCustomer : Short,
+    val id: Long,
     val name: String,
     val address: String,
     val zipCode: String,
     val town: String,
-    val phone: String,
-    val idOrder : Short,
-    val productName : String,
-    val quantity : Short
-) : Parcelable {
-}
+    val phone: String) : Parcelable

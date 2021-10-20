@@ -1,29 +1,46 @@
 package fr.pageup.demoapp.ui.viewmodels
 
 import androidx.lifecycle.ViewModel
-import fr.pageup.demoapp.data.model.Orders
+import fr.pageup.demoapp.data.model.Customer
+import fr.pageup.demoapp.data.model.Order
 
 class DescriptionViewModel: ViewModel() {
 
     private var _orders = mutableListOf(
-        Orders(
-            1,
+        Order(
+            "AXFOP1",
             "Computers",
-            20
+            20,
+            121
         ),
-        Orders(
-            2,
+        Order(
+            "689GH9",
+            "Desktop",
+            10,
+            121
+        ),
+        Order(
+            "2NIGE9",
             "Burger",
-            300
+            300,
+            122
         ),
-        Orders(
-            3,
+        Order(
+            "IPF890",
+            "Smartphone",
+            5,
+            122
+        ),
+        Order(
+            "HIL890",
             "Potatoe",
-            100
+            100,
+            123
         )
-
     )
 
-    fun getOrders() = _orders
+    fun getOrders(): List<Order> = _orders
+
+    fun getOrders(customer: Customer): List<Order> = _orders.filter { it.idCustomer == customer.id }
 
 }

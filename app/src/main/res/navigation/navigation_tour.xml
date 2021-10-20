@@ -37,7 +37,7 @@
             app:destination="@id/tourFragment" />
         <argument
             android:name="customer"
-            app:argType="fr.pageup.demoapp.data.Customer" />
+            app:argType="fr.pageup.demoapp.data.model.Customer" />
 
     </fragment>
 
