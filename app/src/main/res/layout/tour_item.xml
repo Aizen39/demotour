@@ -7,7 +7,7 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="80dp"
+        android:layout_width="50dp"
         android:layout_height="80dp" />
 
     <LinearLayout
@@ -15,7 +15,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/shape_button">
 
         <TextView
             android:id="@+id/name"
@@ -23,7 +24,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Anthony"
-            android:textColor="@color/back"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -33,7 +34,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="address"
-            android:textColor="@color/back"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold" />
 
