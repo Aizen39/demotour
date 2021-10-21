@@ -1,20 +1,15 @@
 package fr.pageup.demoapp.ui.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import fr.pageup.demoapp.R
 import fr.pageup.demoapp.data.model.Customer
-import fr.pageup.demoapp.data.model.Order
 import fr.pageup.demoapp.databinding.TourItemBinding
 
 
-class TourAdapter(private val customers: MutableList<Customer>, private val onItemClickListener: OnItemClickListener<Customer>) :
-    RecyclerView.Adapter<TourAdapter.TourViewHolder>() {
-
+class CustomerAdapter(private var customers: List<Customer>, private val onItemClickListener: OnItemClickListener<Customer>) :
+    RecyclerView.Adapter<CustomerAdapter.TourViewHolder>() {
 
     /** create and display each element from our model there, returning the viewholder class,
      * convert data into elements of recyclerview*/
@@ -31,11 +26,16 @@ class TourAdapter(private val customers: MutableList<Customer>, private val onIt
         holder.setCustomer(customer)
     }
 
-
     /**
      *  @return total numbers of customers of our recycleView
      */
     override fun getItemCount() = customers.size
+
+
+    fun update(customers: List<Customer>) {
+        this.customers = customers
+        notifyDataSetChanged()
+    }
 
     inner class TourViewHolder(private val binding: TourItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun setCustomer(customer: Customer) {

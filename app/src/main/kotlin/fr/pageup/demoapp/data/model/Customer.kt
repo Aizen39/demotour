@@ -8,15 +8,16 @@ import kotlinx.parcelize.Parcelize
 /**
  * A customer has a name, a description and an image of his package
  */
+@JsonClass(generateAdapter = true)
 @Parcelize
 data class Customer(
     val id: Long,
-    @Json( name = "name")val name: String,
+    val name: String,
     val address: String,
     val zipCode: String,
     val town: String,
     val phone: String,
-    var status: Customer.Status = Status.UNDELIVERED
+    var status: Status = Status.UNDELIVERED
 ) : Parcelable {
 
     enum class Status {

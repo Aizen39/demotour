@@ -9,12 +9,12 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import fr.pageup.demoapp.databinding.FragmentDescriptionBinding
-import fr.pageup.demoapp.ui.adapters.DescriptionAdapter
+import fr.pageup.demoapp.ui.adapters.OrderAdapter
 import fr.pageup.demoapp.ui.viewmodels.DescriptionViewModel
 import androidx.recyclerview.widget.DividerItemDecoration
 
 
-class DescriptionFragment : Fragment() {
+class DetailFragment : Fragment() {
 
     private lateinit var binding: FragmentDescriptionBinding
 
@@ -22,7 +22,7 @@ class DescriptionFragment : Fragment() {
 
     private val viewModel: DescriptionViewModel by viewModels()
 
-    private lateinit var adapter: DescriptionAdapter
+    private lateinit var adapter: OrderAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentDescriptionBinding.inflate(inflater,container,false)
@@ -41,7 +41,7 @@ class DescriptionFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val orders = viewModel.getOrders()
-        adapter = DescriptionAdapter(orders)
+        adapter = OrderAdapter(orders)
 
         val recyclerView = binding.ordersRecycler
         val layoutManager = LinearLayoutManager(requireContext())
