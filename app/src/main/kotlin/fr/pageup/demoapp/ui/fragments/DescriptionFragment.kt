@@ -24,7 +24,6 @@ class DescriptionFragment : Fragment() {
 
     private lateinit var adapter: DescriptionAdapter
 
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentDescriptionBinding.inflate(inflater,container,false)
         viewModel.customer = args.customer
@@ -59,10 +58,6 @@ class DescriptionFragment : Fragment() {
             viewModel.validateOrders()
             binding.btnOk.visibility = View.GONE
         }
-
-
-
-
     }
 
 }
