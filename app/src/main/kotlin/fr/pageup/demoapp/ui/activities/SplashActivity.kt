@@ -13,7 +13,7 @@ import fr.pageup.demoapp.R
 class SplashActivity() : AppCompatActivity() {
 
     // temps de chargement du splash avant d'ouvrir le MainActivity
-    private val delay = 3000
+    private val delay = 1000
 
     // Création de la vue
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,4 +28,3 @@ class SplashActivity() : AppCompatActivity() {
         }, delay.toLong())
         }
     }
-    

@@ -14,19 +14,20 @@ import fr.pageup.demoapp.ui.viewmodels.DescriptionViewModel
 import androidx.recyclerview.widget.DividerItemDecoration
 
 
-
-
 class DescriptionFragment : Fragment() {
 
     private lateinit var binding: FragmentDescriptionBinding
+
     private val args: DescriptionFragmentArgs by navArgs()
 
     private val viewModel: DescriptionViewModel by viewModels()
 
     private lateinit var adapter: DescriptionAdapter
 
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentDescriptionBinding.inflate(inflater,container,false)
+        viewModel.customer = args.customer
         with(binding) {
             firstname.text = args.customer.name
             address.text = args.customer.address
@@ -34,14 +35,13 @@ class DescriptionFragment : Fragment() {
             town.text = args.customer.town
             phone.text = args.customer.phone
         }
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val orders = viewModel.getOrders(args.customer)
+        val orders = viewModel.getOrders()
         adapter = DescriptionAdapter(orders)
 
         val recyclerView = binding.ordersRecycler
@@ -54,6 +54,15 @@ class DescriptionFragment : Fragment() {
         )
         recyclerView.addItemDecoration(dividerItemDecoration)
         recyclerView.adapter = adapter
+
+        binding.btnOk.setOnClickListener {
+            viewModel.validateOrders()
+            binding.btnOk.visibility = View.GONE
+        }
+
+
+
+
     }
 
 }

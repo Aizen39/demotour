@@ -13,4 +13,12 @@ data class Customer(
     val address: String,
     val zipCode: String,
     val town: String,
-    val phone: String) : Parcelable
+    val phone: String,
+    var status: Customer.Status = Status.UNDELIVERED
+) : Parcelable {
+
+    enum class Status {
+        UNDELIVERED,
+        DELIVERED
+    }
+}

@@ -2,6 +2,7 @@ package fr.pageup.demoapp.ui.viewmodels
 
 import androidx.lifecycle.ViewModel
 import fr.pageup.demoapp.data.model.Customer
+import fr.pageup.demoapp.data.model.Order
 
 class TourViewModel : ViewModel() {
 
@@ -13,6 +14,7 @@ class TourViewModel : ViewModel() {
             "21000",
             "Dijon",
             "0667458798",
+
         ),
         Customer(
             122,
@@ -20,7 +22,9 @@ class TourViewModel : ViewModel() {
             "6 Rue De La Glacière Zac Les Grandes Longènes",
             "21000",
             "Dijon",
-            "0387564389"
+            "0387564389",
+
+
         ),
         Customer(
             123,
@@ -28,7 +32,9 @@ class TourViewModel : ViewModel() {
             "8 rue souvenir français",
             "39100",
             "Dole",
-            "0645875634"
+            "0645875634",
+
+
         )
     )
 

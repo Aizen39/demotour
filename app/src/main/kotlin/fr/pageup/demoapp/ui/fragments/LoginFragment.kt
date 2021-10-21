@@ -31,19 +31,19 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val animation = AnimationUtils.loadAnimation(requireContext(),R.anim.animation_login)
-        val animationImg = AnimationUtils.loadAnimation(requireContext(),R.anim.animation_login2)
-        val loginbtn: Button = view.findViewById(R.id.loginBtn)
+        val animation = AnimationUtils.loadAnimation(requireContext(), R.anim.animation_login)
+        val animationImg = AnimationUtils.loadAnimation(requireContext(), R.anim.animation_login2)
+        val loginBtn: Button = view.findViewById(R.id.loginBtn)
         val editEmail: EditText = view.findViewById(R.id.email)
         val editPassword: EditText = view.findViewById(R.id.password)
         val iconLogin: ImageView = view.findViewById(R.id.iconLogin)
         editEmail.startAnimation(animation)
         editPassword.startAnimation(animation)
         iconLogin.startAnimation(animationImg)
-        loginbtn.setOnClickListener { view : View ->
+        loginBtn.setOnClickListener { view: View ->
             val txt: String = editEmail.text.toString()
             val mdp: String = editPassword.text.toString()
-            if(txt == viewModel.getUseremail() && mdp == viewModel.getUserPw()){
+            if (txt == viewModel.getUserEmail() && mdp == viewModel.getUserPw()) {
                 view.findNavController().navigate(R.id.loginFragment_to_tourFragment)
             }
         }

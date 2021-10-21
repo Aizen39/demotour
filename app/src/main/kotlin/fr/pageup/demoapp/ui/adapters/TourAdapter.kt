@@ -8,11 +8,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import fr.pageup.demoapp.R
 import fr.pageup.demoapp.data.model.Customer
+import fr.pageup.demoapp.data.model.Order
 import fr.pageup.demoapp.databinding.TourItemBinding
 
 
 class TourAdapter(private val customers: MutableList<Customer>, private val onItemClickListener: OnItemClickListener<Customer>) :
     RecyclerView.Adapter<TourAdapter.TourViewHolder>() {
+
 
     /** create and display each element from our model there, returning the viewholder class,
      * convert data into elements of recyclerview*/
@@ -38,15 +40,18 @@ class TourAdapter(private val customers: MutableList<Customer>, private val onIt
     inner class TourViewHolder(private val binding: TourItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun setCustomer(customer: Customer) {
             with(binding){
-                logo.setImageResource(R.drawable.ic_hourglass)
                 name.text = customer.name
                 address.text = customer.address
-
+                val imgRes = if (customer.status == Customer.Status.UNDELIVERED){
+                    R.drawable.ic_hourglass
+                } else {
+                    R.drawable.ic_done
+                }
+                logo.setImageResource(imgRes)
             }
          binding.containerInfo.setOnClickListener {
              onItemClickListener.onItemClick(customer)
          }
         }
-
     }
 }

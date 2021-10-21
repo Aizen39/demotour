@@ -6,6 +6,6 @@ import fr.pageup.demoapp.data.model.User
 class LoginViewModel : ViewModel() {
 
     private val user = User("anthony@pageup.fr", "0000")
-    fun getUseremail() =  user.email
+    fun getUserEmail() =  user.email
     fun getUserPw() = user.password
 }
