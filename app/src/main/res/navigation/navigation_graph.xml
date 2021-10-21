@@ -10,30 +10,27 @@
         android:label="Login">
 
         <action
-            android:id="@+id/loginFragment_to_tourFragment"
+            android:id="@+id/loginFragment_to_customerFragment"
             app:destination="@id/tourFragment" />
     </fragment>
     <fragment
         android:id="@+id/tourFragment"
-        android:name="fr.pageup.demoapp.ui.fragments.TourFragment"
+        android:name="fr.pageup.demoapp.ui.fragments.CustomerFragment"
         android:label="Your list" >
         <action
-            android:id="@+id/tourFragment_to_descriptionFragment"
+            android:id="@+id/customerFragment_to_descriptionFragment"
             android:name="tourAction"
             app:destination="@id/descriptionFragment" />
         <action
-            android:id="@+id/tourFragment_to_loginFragment"
+            android:id="@+id/customerFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
-        <argument
-            android:name="tourFrag"
-            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/descriptionFragment"
-        android:name="fr.pageup.demoapp.ui.fragments.DescriptionFragment"
+        android:name="fr.pageup.demoapp.ui.fragments.OrderFragment"
         android:label="Details" >
         <action
-            android:id="@+id/descriptionFragment_to_tourFragment"
+            android:id="@+id/descriptionFragment_to_customerFragment"
             app:destination="@id/tourFragment" />
         <argument
             android:name="customer"

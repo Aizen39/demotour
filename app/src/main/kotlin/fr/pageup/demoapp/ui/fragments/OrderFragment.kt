@@ -10,17 +10,17 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import fr.pageup.demoapp.databinding.FragmentDescriptionBinding
 import fr.pageup.demoapp.ui.adapters.OrderAdapter
-import fr.pageup.demoapp.ui.viewmodels.DescriptionViewModel
+import fr.pageup.demoapp.ui.viewmodels.OrderViewModel
 import androidx.recyclerview.widget.DividerItemDecoration
 
 
-class DetailFragment : Fragment() {
+class OrderFragment : Fragment() {
 
     private lateinit var binding: FragmentDescriptionBinding
 
-    private val args: DescriptionFragmentArgs by navArgs()
+    private val args: OrderFragmentArgs by navArgs()
 
-    private val viewModel: DescriptionViewModel by viewModels()
+    private val viewModel: OrderViewModel by viewModels()
 
     private lateinit var adapter: OrderAdapter
 

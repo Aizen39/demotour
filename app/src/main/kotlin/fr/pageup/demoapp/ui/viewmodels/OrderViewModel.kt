@@ -9,7 +9,7 @@ import fr.pageup.demoapp.data.model.Order
 import fr.pageup.demoapp.databinding.FragmentDescriptionBinding
 import fr.pageup.demoapp.databinding.OrderItemBinding
 
-class DescriptionViewModel : ViewModel() {
+class OrderViewModel : ViewModel() {
 
     var customer: Customer? = null
 

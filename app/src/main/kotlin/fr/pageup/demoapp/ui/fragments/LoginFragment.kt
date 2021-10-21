@@ -41,11 +41,11 @@ class LoginFragment : Fragment() {
         editPassword.startAnimation(animation)
         iconLogin.startAnimation(animationImg)
         loginBtn.setOnClickListener { view: View ->
-            val txt: String = editEmail.text.toString()
-            val mdp: String = editPassword.text.toString()
-            if (txt == viewModel.getUserEmail() && mdp == viewModel.getUserPw()) {
-                view.findNavController().navigate(R.id.loginFragment_to_tourFragment)
-            }
+            //val txt: String = editEmail.text.toString()
+            //val mdp: String = editPassword.text.toString()
+            //if (txt == viewModel.getUserEmail() && mdp == viewModel.getUserPw()) {
+                view.findNavController().navigate(R.id.loginFragment_to_customerFragment)
+            //}
         }
     }
 

@@ -3,16 +3,14 @@ package fr.pageup.demoapp.ui.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import fr.pageup.demoapp.R
 import fr.pageup.demoapp.data.model.Order
 import fr.pageup.demoapp.databinding.FragmentDescriptionBinding
 import fr.pageup.demoapp.databinding.OrderItemBinding
 
 
-class DescriptionAdapter(private val orders: List<Order>) :
-    RecyclerView.Adapter<DescriptionAdapter.OrderViewHolder>() {
+class OrderAdapter(private val orders: List<Order>) :
+    RecyclerView.Adapter<OrderAdapter.OrderViewHolder>() {
 
     private lateinit var btn : FragmentDescriptionBinding
 
@@ -52,9 +50,6 @@ class DescriptionAdapter(private val orders: List<Order>) :
                 product.text = order.product
                 quantity.text = order.quantity.toString()
             }
-
-
-
         }
     }
 }

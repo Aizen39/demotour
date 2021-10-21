@@ -99,6 +99,7 @@ dependencies {
     implementation(Libs.lifecycleLiveData)
     implementation(Libs.lifecycleRunTime)
     implementation(Libs.lifecycleSavedState)
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
     kapt(Libs.kaptLifecycle)
 
     //Retrofit
@@ -108,6 +109,7 @@ dependencies {
 
     // Third party
     implementation(Libs.koin)
+    implementation(Libs.timber)
 
     // Test
     testImplementation(Libs.junit)
