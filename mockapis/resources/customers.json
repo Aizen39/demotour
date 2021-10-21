@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Lea Ricover",
+    "address": "2 avenur des petits pois",
+    "zipCode": "21000",
+    "town": "Dijon",
+    "phone": 331675105987
+  },
+  {
+    "id": 2,
+    "name": "Jean Aimmar",
+    "address": "25 rue de la fatigue",
+    "zipCode": "21000",
+    "town": "Dijon",
+    "phone": 336483920192
+  },
+  {
+    "id": 3,
+    "name": "Igor Ltraktok",
+    "address": "78 impasse du garage",
+    "zipCode": "21000",
+    "town": "Dijon",
+    "phone": 331675105987
+  }
+]

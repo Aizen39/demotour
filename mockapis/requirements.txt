@@ -1,0 +1,4 @@
+Flask==2.0.1
+Flask_HTTPAuth==4.4.0
+cryptography==2.8
+pipreqs==0.4.10

@@ -1,0 +1,38 @@
+[
+      {
+        "id": "AXFOP1",
+        "product": "Dell XPS 15",
+        "quantity": 2,
+        "idCustomer": 1
+      },
+      {
+        "id": "PF7980",
+        "product": "Samsung A10",
+        "quantity": 12,
+        "idCustomer": 1
+      },
+      {
+        "id": "UO890E",
+        "product": "Meuble de bureau",
+        "quantity": 4,
+        "idCustomer": 1
+      },
+      {
+        "id": "AXFOP1",
+        "product": "Dell XPS 15",
+        "quantity": 1,
+        "idCustomer": 2
+      },
+      {
+        "id": "H9027H",
+        "product": "Pommes de terre (kg)",
+        "quantity": 10,
+        "idCustomer": 2
+      },
+      {
+        "id": "AA39GT",
+        "product": "Papier toilette (x16)",
+        "quantity": 10,
+        "idCustomer": 3
+      }
+    ]

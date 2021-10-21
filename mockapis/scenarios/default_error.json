@@ -1,0 +1,18 @@
+{
+	"credentials": "ABCDEFGH",
+	"token": {
+		"code" : 200,
+		"data" : "token", 
+		"error" : null
+	},
+	"customers" : {
+		"code" : 500,
+		"data" : null,
+		"error" : null
+	},
+	"orders" : {
+		"code" : 200,
+		"data" : "orders",
+		"error" : null
+	}
+}
