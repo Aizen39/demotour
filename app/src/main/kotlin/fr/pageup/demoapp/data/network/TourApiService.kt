@@ -1,25 +1,29 @@
 package fr.pageup.demoapp.data.network
 
+import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
+import fr.pageup.demoapp.data.model.Customer
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.http.GET
 
 private const val BASE_URL = " "
-
 //create moshi object
-//private val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory())
-
+private val moshi = Moshi.Builder().build()
+//create adapter
+private val adapter: JsonAdapter<Customer> = moshi.adapter(Customer::class.java)
+private val customer = adapter
 /**
- * Build and create a Retrofit object.
- * Retrofit need the base URI for the web service and a converter,
- * Converter tells Retrofit what to do with data et and it gets back from the ws
- * fetch a json response and return it as a String with ScalarsConverterFactory
  */
 private val retrofit = Retrofit.Builder()
-        //.addConverterFactory(MoshiConverterFactory.create(moshi))
+        .addConverterFactory(MoshiConverterFactory.create())
         .baseUrl(BASE_URL)
         .build()
 
+interface TourApiService {
+    @GET("customers")
+    suspend fun getCustomers() : List<Customer>
+}
 
 
 

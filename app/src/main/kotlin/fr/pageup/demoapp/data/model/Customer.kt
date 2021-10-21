@@ -1,6 +1,8 @@
 package fr.pageup.demoapp.data.model
 
 import android.os.Parcelable
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 import kotlinx.parcelize.Parcelize
 
 /**
@@ -9,7 +11,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Customer(
     val id: Long,
-    val name: String,
+    @Json( name = "name")val name: String,
     val address: String,
     val zipCode: String,
     val town: String,

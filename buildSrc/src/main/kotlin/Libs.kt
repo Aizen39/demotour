@@ -40,14 +40,10 @@ object Libs {
     const val koin = "io.insert-koin:koin-android:${Versions.koinVersion}"
     const val timber = "com.jakewharton.timber:timber:${Versions.timberVersion}"
     const val moshi = "com.squareup.moshi:moshi:${Versions.moshiVersion}"
-    const val kaptMoshi = "com.squareup.moshi:moshi-kotlin-codegen:${Versions.moshiVersion}"
+    const val kaptMoshiKotlin = "com.squareup.moshi:moshi-kotlin-codegen:${Versions.kaptmoshiversion}"
 
     //Retrofit
-    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofitVersion}"
     const val retrofitAndMoshi = "com.squareup.retrofit2:converter-moshi:${Versions.retrofitWithMoshiVersion}"
-
-    //Coroutine
-
 
     
     // Test

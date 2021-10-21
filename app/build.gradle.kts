@@ -102,9 +102,9 @@ dependencies {
     kapt(Libs.kaptLifecycle)
 
     //Retrofit
-    implementation(Libs.retrofit)
     implementation(Libs.moshi)
     implementation(Libs.retrofitAndMoshi)
+    kapt(Libs.kaptMoshiKotlin)
 
     // Third party
     implementation(Libs.koin)

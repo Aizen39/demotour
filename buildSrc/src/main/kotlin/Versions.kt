@@ -23,9 +23,7 @@ object Versions {
     const val moshiVersion = "1.12.0"
 
     //Retrofit
-    const val retrofitVersion = "2.9.0"
     const val retrofitWithMoshiVersion = "2.9.0"
-    const val kotlinMoshi = "2.9.0"
 
     // Test
     const val junitVersion = "4.13.2"
