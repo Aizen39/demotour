@@ -101,6 +101,11 @@ dependencies {
     implementation(Libs.lifecycleSavedState)
     kapt(Libs.kaptLifecycle)
 
+    //Retrofit
+    implementation(Libs.retrofit)
+    implementation(Libs.moshi)
+    implementation(Libs.retrofitAndMoshi)
+
     // Third party
     implementation(Libs.koin)
 

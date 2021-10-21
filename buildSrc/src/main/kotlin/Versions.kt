@@ -22,11 +22,17 @@ object Versions {
     const val koinVersion = "3.1.0"
     const val moshiVersion = "1.12.0"
 
+    //Retrofit
+    const val retrofitVersion = "2.9.0"
+    const val retrofitWithMoshiVersion = "2.9.0"
+    const val kotlinMoshi = "2.9.0"
+
     // Test
     const val junitVersion = "4.13.2"
     const val junitTestVersion = "1.1.3"
     const val espressoCoreVersion = "3.4.0"
     const val jacocoVersion = "0.8.7"
+
 
     // Others
     const val detektVersion = "1.18.0"

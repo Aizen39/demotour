@@ -41,6 +41,14 @@ object Libs {
     const val timber = "com.jakewharton.timber:timber:${Versions.timberVersion}"
     const val moshi = "com.squareup.moshi:moshi:${Versions.moshiVersion}"
     const val kaptMoshi = "com.squareup.moshi:moshi-kotlin-codegen:${Versions.moshiVersion}"
+
+    //Retrofit
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofitVersion}"
+    const val retrofitAndMoshi = "com.squareup.retrofit2:converter-moshi:${Versions.retrofitWithMoshiVersion}"
+
+    //Coroutine
+
+
     
     // Test
     const val junit = "junit:junit:${Versions.junitVersion}"
