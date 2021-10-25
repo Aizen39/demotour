@@ -1,54 +1,41 @@
 package fr.pageup.demoapp.ui.viewmodels
 
-import android.text.style.UnderlineSpan
-import android.widget.ImageView
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import fr.pageup.demoapp.R
 import fr.pageup.demoapp.data.model.Customer
 import fr.pageup.demoapp.data.model.Order
-import fr.pageup.demoapp.databinding.FragmentDescriptionBinding
-import fr.pageup.demoapp.databinding.OrderItemBinding
+import fr.pageup.demoapp.data.repositories.OrderRepository
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import timber.log.Timber
 
 class OrderViewModel : ViewModel() {
 
     var customer: Customer? = null
 
-    private lateinit var img : OrderItemBinding
+    private val repository = OrderRepository()
 
-    private var _orders = mutableListOf(
-        Order(
-            "AXFOP1",
-            "Computers",
-            20,
-            121,
-        ),
-        Order(
-            "689GH9",
-            "Desktop",
-            10,
-            121,
-        ),
-        Order(
-            "2NIGE9",
-            "Burger",
-            300,
-            122,
-        ),
-        Order(
-            "IPF890",
-            "Smartphone",
-            5,
-            122,
-        ),
-        Order(
-            "HIL890",
-            "Potatoe",
-            100,
-            123
-        )
-    )
+    private val _orders = MutableLiveData<List<Order>>()
+    val orders : LiveData<List<Order>> = _orders
 
-    fun getOrders(): List<Order> = _orders.filter { it.idCustomer == customer?.id }
+
+
+    /*init {
+        fetchOrders(OrderApiFilter.SHOW_ID)
+    }*/
+    fun fetchOrders() {
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val orders = repository.fetch(customer?.id)
+                _orders.postValue(orders)
+            } catch (e: Exception) {
+                Timber.e(e)
+            }
+        }
+    }
+    //fun getOrders(): List<Order> = _orders.filter { it.idCustomer == customer?.id }
 
     fun validateOrders() {
         customer?.status = Customer.Status.DELIVERED

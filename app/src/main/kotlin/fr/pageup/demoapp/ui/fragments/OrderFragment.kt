@@ -8,15 +8,15 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import fr.pageup.demoapp.databinding.FragmentDescriptionBinding
 import fr.pageup.demoapp.ui.adapters.OrderAdapter
 import fr.pageup.demoapp.ui.viewmodels.OrderViewModel
 import androidx.recyclerview.widget.DividerItemDecoration
+import fr.pageup.demoapp.databinding.FragmentOrderBinding
 
 
 class OrderFragment : Fragment() {
 
-    private lateinit var binding: FragmentDescriptionBinding
+    private lateinit var binding: FragmentOrderBinding
 
     private val args: OrderFragmentArgs by navArgs()
 
@@ -25,7 +25,7 @@ class OrderFragment : Fragment() {
     private lateinit var adapter: OrderAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = FragmentDescriptionBinding.inflate(inflater,container,false)
+        binding = FragmentOrderBinding.inflate(inflater,container,false)
         viewModel.customer = args.customer
         with(binding) {
             firstname.text = args.customer.name
@@ -39,9 +39,8 @@ class OrderFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        adapter = OrderAdapter(listOf())
 
-        val orders = viewModel.getOrders()
-        adapter = OrderAdapter(orders)
 
         val recyclerView = binding.ordersRecycler
         val layoutManager = LinearLayoutManager(requireContext())
@@ -53,6 +52,16 @@ class OrderFragment : Fragment() {
         )
         recyclerView.addItemDecoration(dividerItemDecoration)
         recyclerView.adapter = adapter
+
+        viewModel.fetchOrders()
+
+        viewModel.orders.observe(viewLifecycleOwner) {
+            it?.let {
+                adapter.update(it)
+            }
+        }
+
+
 
         binding.btnOk.setOnClickListener {
             viewModel.validateOrders()

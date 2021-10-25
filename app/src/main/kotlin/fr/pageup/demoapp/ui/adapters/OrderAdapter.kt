@@ -1,20 +1,18 @@
 package fr.pageup.demoapp.ui.adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import fr.pageup.demoapp.data.model.Customer
 import fr.pageup.demoapp.data.model.Order
-import fr.pageup.demoapp.databinding.FragmentDescriptionBinding
 import fr.pageup.demoapp.databinding.OrderItemBinding
 
 
-class OrderAdapter(private val orders: List<Order>) :
+class OrderAdapter(private var orders: List<Order>) :
     RecyclerView.Adapter<OrderAdapter.OrderViewHolder>() {
 
-    private lateinit var btn : FragmentDescriptionBinding
-
-    private lateinit var img : ImageView
 
     /** create and display each element from our model there, returning the viewholder class,
      * convert data into elements of recyclerview*/
@@ -40,6 +38,12 @@ class OrderAdapter(private val orders: List<Order>) :
      *  @return total numbers of customers of our recycleView
      */
     override fun getItemCount() = orders.size
+
+
+    fun update(orders: List<Order>) {
+        this.orders = orders
+        notifyDataSetChanged()
+    }
 
     inner class OrderViewHolder(private val binding: OrderItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
