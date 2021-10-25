@@ -40,7 +40,7 @@ def token():
             jsonify({'error': 'Authentication failed, wrong client_secret'}), 400)
 
 @app.route('/api/customers', methods=['GET'])
-#@auth.login_required
+@auth.login_required
 def get_customers():
     """
     Accept only a GET request.
@@ -52,7 +52,7 @@ def get_customers():
     return jsonify(body), code
 
 @app.route('/api/orders', methods=['GET'])
-#@auth.login_required
+@auth.login_required
 def get_orders():
     """
     Accept only a GET request.
@@ -64,7 +64,7 @@ def get_orders():
     return jsonify(body), code
 
 @app.route('/api/customers/<int:id_customer>/orders', methods=['GET'])
-#@auth.login_required
+@auth.login_required
 def get_orders_by(id_customer):
     """
     Accept only a GET request.
