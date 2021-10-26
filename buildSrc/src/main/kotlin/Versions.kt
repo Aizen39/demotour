@@ -25,6 +25,9 @@ object Versions {
     //Retrofit
     const val retrofitWithMoshiVersion = "2.9.0"
 
+    // Database
+    const val roomVersion = "2.3.0"
+
     // Test
     const val junitVersion = "4.13.2"
     const val junitTestVersion = "1.1.3"

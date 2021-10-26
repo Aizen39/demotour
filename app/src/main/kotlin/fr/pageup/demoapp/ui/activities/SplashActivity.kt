@@ -6,6 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import fr.pageup.demoapp.R
+import fr.pageup.demoapp.data.database.DatabaseApp
 
 /**
  * Simplement un splashscreen avec le logo de l'entreprise
@@ -20,6 +21,7 @@ class SplashActivity() : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
+        //DatabaseApp.get(applicationContext)
         // Lancement du MainActivity tardif
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, MainActivity::class.java)

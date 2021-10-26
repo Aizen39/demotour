@@ -1,22 +1,36 @@
 package fr.pageup.demoapp.data.model
 
 import android.os.Parcelable
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import kotlinx.parcelize.Parcelize
 
-/**
- * A customer has a name, a description and an image of his package
- */
+@Entity(tableName = "table_customer")
 @JsonClass(generateAdapter = true)
 @Parcelize
 data class Customer(
-    val id: Long,
+
+    @PrimaryKey(autoGenerate = true)
+    val idCustomer: Long,
+
+    @ColumnInfo(name = "name_c")
     val name: String,
+
+    @ColumnInfo(name = "address_c")
     val address: String,
+
+    @ColumnInfo(name = "zip_code")
     val zipCode: String,
+
+    @ColumnInfo(name = "town_c")
     val town: String,
+
+    @ColumnInfo(name = "phone_c")
     val phone: String,
+
     var status: Status = Status.UNDELIVERED
 ) : Parcelable {
 

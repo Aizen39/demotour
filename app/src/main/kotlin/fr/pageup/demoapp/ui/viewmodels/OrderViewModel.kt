@@ -28,7 +28,7 @@ class OrderViewModel : ViewModel() {
     fun fetchOrders() {
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                val orders = repository.fetch(customer?.id)
+                val orders = repository.fetch(customer?.idCustomer)
                 _orders.postValue(orders)
             } catch (e: Exception) {
                 Timber.e(e)

@@ -100,6 +100,7 @@ dependencies {
     implementation(Libs.lifecycleRunTime)
     implementation(Libs.lifecycleSavedState)
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+    implementation(Libs.room)
     kapt(Libs.kaptLifecycle)
 
     //Retrofit
