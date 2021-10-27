@@ -13,6 +13,9 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import fr.pageup.demoapp.R
+import fr.pageup.demoapp.data.database.CustomerDAO
+import fr.pageup.demoapp.data.database.DatabaseApp
+import fr.pageup.demoapp.data.database.OrderDAO
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,6 +25,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
 
         //back navigation feature
         val navHostFragment =

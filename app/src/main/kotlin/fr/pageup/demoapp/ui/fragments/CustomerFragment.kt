@@ -41,6 +41,11 @@ class CustomerFragment : Fragment(), OnItemClickListener<Customer> {
             customerRecycler.adapter = adapter
         }
 
+
+        /*binding.floatingbtn.setOnClickListener {
+
+        }*/
+
         viewModel.fetchCustomers()
 
         viewModel.customers.observe(viewLifecycleOwner) {

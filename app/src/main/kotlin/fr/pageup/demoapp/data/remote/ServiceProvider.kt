@@ -12,7 +12,8 @@ object ServiceProvider {
     //create moshi object
     private val moshi = Moshi.Builder().build()
     //create adapter
-    //private val adapter: JsonAdapter<Customer> = moshi.adapter(Customer::class.java)
+
+    var adapter: JsonAdapter<Customer> = moshi.adapter(Customer::class.java)
 
     val retrofit = Retrofit.Builder()
         .addConverterFactory(MoshiConverterFactory.create(moshi))
