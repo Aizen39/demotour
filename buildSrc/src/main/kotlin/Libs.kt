@@ -35,7 +35,10 @@ object Libs {
     const val lifecycleRunTime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleVersion}"
     const val lifecycleSavedState = "androidx.lifecycle:lifecycle-viewmodel-savedstate:${Versions.lifecycleVersion}"
     const val kaptLifecycle = "androidx.lifecycle:lifecycle-compiler:${Versions.lifecycleVersion}"
+
     const val room ="androidx.room:room-runtime:${Versions.roomVersion}"
+    const val kaptRoom = "androidx.room:room-compiler:${Versions.roomVersion}"
+    const val roomKtx = "androidx.room:room-ktx:${Versions.roomVersion}"
 
     // Third party
     const val koin = "io.insert-koin:koin-android:${Versions.koinVersion}"

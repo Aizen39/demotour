@@ -44,7 +44,7 @@ class CustomerAdapter(private var customers: List<Customer>, private val onItemC
                 address.text = customer.address
                 val imgRes = if (customer.status == Customer.Status.UNDELIVERED){
                     R.drawable.ic_hourglass
-                } else {
+                } else  {
                     R.drawable.ic_done
                 }
                 logo.setImageResource(imgRes)

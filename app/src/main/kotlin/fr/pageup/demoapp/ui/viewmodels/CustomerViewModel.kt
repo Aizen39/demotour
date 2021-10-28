@@ -1,5 +1,6 @@
 package fr.pageup.demoapp.ui.viewmodels
 
+import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -10,9 +11,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
-class CustomerViewModel : ViewModel() {
+class CustomerViewModel(context: Context): ViewModel() {
 
-    private val repository = CustomerRepository()
+    private val repository = CustomerRepository(context)
 
     private val _customers = MutableLiveData<List<Customer>>()
     val customers : LiveData<List<Customer>> = _customers
@@ -20,11 +21,13 @@ class CustomerViewModel : ViewModel() {
     fun fetchCustomers() {
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                val customers = repository.fetch()
+                repository.update()
+                val customers = repository.getCustomers()
                 _customers.postValue(customers)
             } catch (e: Exception) {
                Timber.e(e)
             }
         }
     }
+
 }

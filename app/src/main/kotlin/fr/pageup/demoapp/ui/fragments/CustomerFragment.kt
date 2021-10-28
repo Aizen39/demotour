@@ -18,7 +18,7 @@ import fr.pageup.demoapp.ui.viewmodels.CustomerViewModel
 
 class CustomerFragment : Fragment(), OnItemClickListener<Customer> {
 
-    private val viewModel: CustomerViewModel by viewModels()
+    private lateinit var viewModel: CustomerViewModel
     private lateinit var binding: FragmentCustomerBinding
 
     private lateinit var adapter: CustomerAdapter
@@ -28,6 +28,7 @@ class CustomerFragment : Fragment(), OnItemClickListener<Customer> {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        viewModel = CustomerViewModel(requireContext())
         binding = FragmentCustomerBinding.inflate(inflater, container, false)
         return binding.root
     }
