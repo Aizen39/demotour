@@ -1,21 +1,13 @@
 package fr.pageup.demoapp.ui.activities
 
-import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentContainerView
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.recyclerview.widget.LinearLayoutManager
 import fr.pageup.demoapp.R
-import fr.pageup.demoapp.data.database.CustomerDAO
-import fr.pageup.demoapp.data.database.DatabaseApp
-import fr.pageup.demoapp.data.database.OrderDAO
 
 class MainActivity : AppCompatActivity() {
 

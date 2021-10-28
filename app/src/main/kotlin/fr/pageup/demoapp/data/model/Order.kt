@@ -14,21 +14,21 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Order(
 
-        @Json(name = "id")
+    @Json(name = "id")
         @ColumnInfo(name = "ref_order")
-        @PrimaryKey(autoGenerate = true)
+        @PrimaryKey
         val ref: String,
 
-        @ColumnInfo(name = "name_order")
+    @ColumnInfo(name = "name_order")
         val product: String,
 
-        @ColumnInfo(name = "quantity_order")
+    @ColumnInfo(name = "quantity_order")
         val quantity: Int,
 
-        @ColumnInfo(name = "id_customer_order")
+    @ColumnInfo(name = "id_customer_order")
         val idCustomer: Long,
 
-        val status: Status = Status.UNDELIVERED
+    var status: Status = Status.UNDELIVERED
 ) : Parcelable {
 
     enum class Status {

@@ -6,7 +6,6 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import fr.pageup.demoapp.R
-import fr.pageup.demoapp.data.database.DatabaseApp
 
 /**
  * Simplement un splashscreen avec le logo de l'entreprise

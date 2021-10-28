@@ -1,5 +1,6 @@
 package fr.pageup.demoapp.ui.viewmodels
 
+import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,11 +12,11 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
-class OrderViewModel : ViewModel() {
+class OrderViewModel(context: Context) : ViewModel() {
 
     var customer: Customer? = null
 
-    private val repository = OrderRepository()
+    private val repository = OrderRepository(context)
 
     private val _orders = MutableLiveData<List<Order>>()
     val orders : LiveData<List<Order>> = _orders
@@ -28,7 +29,8 @@ class OrderViewModel : ViewModel() {
     fun fetchOrders() {
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                val orders = repository.fetch(customer?.idCustomer)
+                repository.update()
+                val orders = repository.getOrders()
                 _orders.postValue(orders)
             } catch (e: Exception) {
                 Timber.e(e)

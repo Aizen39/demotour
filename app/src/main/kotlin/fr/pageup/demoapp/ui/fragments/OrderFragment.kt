@@ -6,26 +6,31 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import fr.pageup.demoapp.ui.adapters.OrderAdapter
 import fr.pageup.demoapp.ui.viewmodels.OrderViewModel
 import androidx.recyclerview.widget.DividerItemDecoration
+import fr.pageup.demoapp.data.model.Order
 import fr.pageup.demoapp.databinding.FragmentOrderBinding
+import fr.pageup.demoapp.ui.adapters.OnItemClickListener
+import fr.pageup.demoapp.ui.viewmodels.CustomerViewModel
 
 
-class OrderFragment : Fragment() {
+class OrderFragment : Fragment(), OnItemClickListener<Order> {
 
     private lateinit var binding: FragmentOrderBinding
 
     private val args: OrderFragmentArgs by navArgs()
 
-    private val viewModel: OrderViewModel by viewModels()
+    private lateinit var viewModel: OrderViewModel
 
     private lateinit var adapter: OrderAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentOrderBinding.inflate(inflater,container,false)
+        viewModel = OrderViewModel(requireContext())
         viewModel.customer = args.customer
         with(binding) {
             firstname.text = args.customer.name
@@ -34,12 +39,13 @@ class OrderFragment : Fragment() {
             town.text = args.customer.town
             phone.text = args.customer.phone
         }
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapter = OrderAdapter(listOf())
+        adapter = OrderAdapter(listOf(),this)
 
 
         val recyclerView = binding.ordersRecycler
@@ -61,12 +67,14 @@ class OrderFragment : Fragment() {
             }
         }
 
-
-
         binding.btnOk.setOnClickListener {
             viewModel.validateOrders()
-            binding.btnOk.visibility = View.GONE
+
         }
+    }
+
+    override fun onItemClick(item: Order) {
+
     }
 
 }

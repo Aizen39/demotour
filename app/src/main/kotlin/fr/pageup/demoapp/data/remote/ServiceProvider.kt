@@ -10,7 +10,7 @@ object ServiceProvider {
 
     private const val BASE_URL = "http://172.31.99.30:5000/"
     //create moshi object
-    private val moshi = Moshi.Builder().build()
+    val moshi = Moshi.Builder().build()
     //create adapter
 
     var adapter: JsonAdapter<Customer> = moshi.adapter(Customer::class.java)
