@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="vertical"
-        android:background="@drawable/shape_button">
+        android:background="@drawable/shape_button_white">
 
         <TextView
             android:id="@+id/name"

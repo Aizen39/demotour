@@ -5,16 +5,22 @@ import fr.pageup.demoapp.data.model.Customer
 
 
 @Dao
-interface CustomerDAO {
+interface CustomerDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertCustomer(customer: Customer)
+    suspend fun insert(customer: Customer)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertAll(customers: List<Customer>)
 
     @Update
-    suspend  fun updateCustomer(customer: Customer)
+    suspend  fun update(customer: Customer)
 
     @Query("SELECT * from table_customer WHERE idCustomer = :idCustomer")
     suspend fun getCustomer(idCustomer: Long): Customer
+
+    @Query("SELECT * from table_customer")
+    fun getAll(): List<Customer>
 
     @Query("DELETE FROM table_customer")
     suspend fun clear()

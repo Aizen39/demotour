@@ -9,12 +9,12 @@ import fr.pageup.demoapp.data.local.CustomerConverter
 import fr.pageup.demoapp.data.model.Customer
 import fr.pageup.demoapp.data.model.Order
 
-/**@TypeConverters(CustomerConverter::class.java)*/
 @Database(version = 1, entities = [Customer::class,Order::class],exportSchema = false)
+//@TypeConverters(CustomerConverter::class)
 abstract class DatabaseApp : RoomDatabase() {
 
     //connect database to dao
-    abstract val customerDAO: CustomerDAO
+    abstract val customerDao: CustomerDao
     abstract val orderDAO: OrderDAO
 
 
