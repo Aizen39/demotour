@@ -1,11 +1,9 @@
-package fr.pageup.demoapp.data.database
+package fr.pageup.demoapp.data.local
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
-import fr.pageup.demoapp.data.local.CustomerConverter
 import fr.pageup.demoapp.data.model.Customer
 import fr.pageup.demoapp.data.model.Order
 
@@ -15,7 +13,7 @@ abstract class DatabaseApp : RoomDatabase() {
 
     //connect database to dao
     abstract val customerDao: CustomerDao
-    abstract val orderDAO: OrderDAO
+    abstract val orderDao: OrderDao
 
 
     companion object{

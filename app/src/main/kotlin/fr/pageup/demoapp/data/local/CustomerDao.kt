@@ -1,4 +1,4 @@
-package fr.pageup.demoapp.data.database
+package fr.pageup.demoapp.data.local
 
 import androidx.room.*
 import fr.pageup.demoapp.data.model.Customer
@@ -16,7 +16,7 @@ interface CustomerDao {
     @Update
     suspend  fun update(customer: Customer)
 
-    @Query("SELECT * from table_customer WHERE idCustomer = :idCustomer")
+    @Query("SELECT * from table_customer WHERE id = :idCustomer")
     suspend fun getCustomer(idCustomer: Long): Customer
 
     @Query("SELECT * from table_customer")

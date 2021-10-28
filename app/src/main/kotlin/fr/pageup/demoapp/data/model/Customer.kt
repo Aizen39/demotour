@@ -13,8 +13,8 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Customer(
 
-    @PrimaryKey(autoGenerate = true)
-    val idCustomer: Long,
+    @PrimaryKey
+    val id: Long,
 
     @ColumnInfo(name = "name_c")
     val name: String,
