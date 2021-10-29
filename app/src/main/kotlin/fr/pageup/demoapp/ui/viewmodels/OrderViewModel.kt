@@ -40,7 +40,8 @@ class OrderViewModel(context: Context) : ViewModel() {
     //fun getOrders(): List<Order> = _orders.filter { it.idCustomer == customer?.id }
 
     fun validateOrders() {
-        customer?.status = Customer.Status.DELIVERED
+
+        //customer?.status = Customer.Status.DELIVERED
 
     }
 }

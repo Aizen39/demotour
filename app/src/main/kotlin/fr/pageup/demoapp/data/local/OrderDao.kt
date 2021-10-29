@@ -1,7 +1,6 @@
 package fr.pageup.demoapp.data.local
 
 import androidx.room.*
-import fr.pageup.demoapp.data.model.Customer
 import fr.pageup.demoapp.data.model.CustomerWithOrders
 import fr.pageup.demoapp.data.model.Order
 
@@ -17,8 +16,11 @@ interface OrderDao{
     @Query("SELECT * FROM table_customer WHERE id = :id")
     fun getOrdersByIdCustomer(id:Long) : List<CustomerWithOrders>
 
-    @Update
-    suspend  fun update(order: Order)
+    /*@Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertStatus(status:Order.Status)
+
+    @Query("SELECT status FROM table_order")
+    fun getStatus() : Order.Status*/
 
     @Query("SELECT * from table_order")
     fun getAll(): List<Order>

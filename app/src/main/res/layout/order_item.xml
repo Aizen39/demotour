@@ -9,7 +9,6 @@
     android:paddingBottom="10dp">
 
     <LinearLayout
-        android:id="@+id/container_order"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="8"

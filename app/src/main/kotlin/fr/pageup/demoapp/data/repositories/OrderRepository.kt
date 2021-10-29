@@ -19,6 +19,20 @@ class OrderRepository(context: Context) {
 
     fun getOrders() = dao.getAll()
 
+    /*fun getStatus() : Boolean {
+        var order : Order.Status = Order.Status.UNDELIVERED
+        if(order == Order.Status.DELIVERED){
+            return true
+        }
+        return false
+    }
+
+    fun updateStatus() {
+        if(getStatus()){
+            var status = dao.getStatus()
+            dao.insertStatus(status)
+        }
+    }*/
 
     suspend fun update() {
         var orders = dao.getAll()
@@ -28,6 +42,9 @@ class OrderRepository(context: Context) {
         }
     }
 
+
     private fun shouldFetch(orders: List<Order>) = orders.isEmpty()
+
+
 }
 

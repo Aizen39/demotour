@@ -1,9 +1,8 @@
 package fr.pageup.demoapp.data.model
 
 import android.os.Parcelable
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import androidx.databinding.adapters.Converters
+import androidx.room.*
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import com.squareup.moshi.JsonQualifier
@@ -14,7 +13,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Order(
 
-    @Json(name = "id")
+        @Json(name = "id")
         @ColumnInfo(name = "ref_order")
         @PrimaryKey
         val ref: String,
@@ -28,12 +27,14 @@ data class Order(
     @ColumnInfo(name = "id_customer_order")
         val idCustomer: Long,
 
+    /*@ColumnInfo(name = "status")*/
     var status: Status = Status.UNDELIVERED
 ) : Parcelable {
 
-    enum class Status {
-        DELIVERED,
-        UNDELIVERED
+
+    enum class Status() {
+        UNDELIVERED,
+        DELIVERED
     }
 
 }

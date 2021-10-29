@@ -40,7 +40,7 @@ class OrderAdapter(
     override fun onBindViewHolder(holder: OrderViewHolder, position: Int) {
         val order = orders[position]
         holder.bind(order)
-        last_position = position
+        //last_position = position
     }
 
     /**
@@ -59,8 +59,6 @@ class OrderAdapter(
 
         fun bind(order: Order) {
 
-            var status : Order.Status = Order.Status.UNDELIVERED
-
             with(binding) {
                 ref.text = order.ref
                 product.text = order.product
@@ -70,13 +68,13 @@ class OrderAdapter(
                     if (order.status == Order.Status.UNDELIVERED) {
                         onItemClickListener.onItemClick(order)
                         container.setBackgroundResource(R.drawable.shape_button)
-                        notifyItemChanged(last_position)
                         order.status = Order.Status.DELIVERED
+                        //notifyItemChanged(last_position)
                     } else {
                         onItemClickListener.onItemClick(order)
                         container.setBackgroundResource(R.drawable.shape_button_white)
-                        notifyItemChanged(last_position)
                         order.status = Order.Status.UNDELIVERED
+                        //notifyItemChanged(last_position)
                     }
 
                 }

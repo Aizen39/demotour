@@ -74,7 +74,7 @@ class OrderFragment : Fragment(), OnItemClickListener<Order> {
     }
 
     override fun onItemClick(item: Order) {
-
+        item.status = Order.Status.DELIVERED
     }
 
 }
