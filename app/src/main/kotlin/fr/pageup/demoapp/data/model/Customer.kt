@@ -32,11 +32,11 @@ data class Customer(
     val phone: String,
 
     //@ColumnInfo(name = "status_c")
-    var status: Status = Status.UNDELIVERED
+    //var status: Status
 ) : Parcelable {
 
-    enum class Status {
+    /*enum class Status {
         UNDELIVERED,
         DELIVERED
-    }
+    }*/
 }

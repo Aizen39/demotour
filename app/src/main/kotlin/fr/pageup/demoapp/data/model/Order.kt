@@ -8,6 +8,7 @@ import com.squareup.moshi.JsonClass
 import com.squareup.moshi.JsonQualifier
 import kotlinx.parcelize.Parcelize
 
+@TypeConverters(StatusConverter::class)
 @Entity(tableName = "table_order")
 @JsonClass(generateAdapter = true)
 @Parcelize
@@ -27,15 +28,11 @@ data class Order(
     @ColumnInfo(name = "id_customer_order")
         val idCustomer: Long,
 
-    /*@ColumnInfo(name = "status")*/
-    var status: Status = Status.UNDELIVERED
+    @ColumnInfo(name = "status")
+    var status: Status
 ) : Parcelable {
 
 
-    enum class Status() {
-        UNDELIVERED,
-        DELIVERED
-    }
 
 }
 

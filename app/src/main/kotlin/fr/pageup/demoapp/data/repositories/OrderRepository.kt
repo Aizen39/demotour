@@ -4,6 +4,8 @@ import android.content.Context
 import fr.pageup.demoapp.data.local.DatabaseApp
 import fr.pageup.demoapp.data.model.Customer
 import fr.pageup.demoapp.data.model.Order
+import fr.pageup.demoapp.data.model.Status
+import fr.pageup.demoapp.data.model.StatusConverter
 import fr.pageup.demoapp.data.remote.CustomerApi
 import fr.pageup.demoapp.data.remote.OrderApi
 import fr.pageup.demoapp.data.remote.ServiceProvider
@@ -19,9 +21,9 @@ class OrderRepository(context: Context) {
 
     fun getOrders() = dao.getAll()
 
-    /*fun getStatus() : Boolean {
-        var order : Order.Status = Order.Status.UNDELIVERED
-        if(order == Order.Status.DELIVERED){
+    fun getStatus() : Boolean {
+        var status : Status = Status.DELIVERED
+        if(status == Status.DELIVERED){
             return true
         }
         return false
@@ -32,7 +34,7 @@ class OrderRepository(context: Context) {
             var status = dao.getStatus()
             dao.insertStatus(status)
         }
-    }*/
+    }
 
     suspend fun update() {
         var orders = dao.getAll()
