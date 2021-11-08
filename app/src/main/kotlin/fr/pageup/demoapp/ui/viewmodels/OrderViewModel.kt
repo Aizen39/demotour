@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import fr.pageup.demoapp.data.model.Customer
 import fr.pageup.demoapp.data.model.Order
+import fr.pageup.demoapp.data.model.Status
 import fr.pageup.demoapp.data.repositories.OrderRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -26,11 +27,11 @@ class OrderViewModel(context: Context) : ViewModel() {
     /*init {
         fetchOrders(OrderApiFilter.SHOW_ID)
     }*/
-    fun fetchOrders() {
+    fun fetchOrders(idCustomer : Long) {
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                repository.update()
-                val orders = repository.getOrders()
+                repository.update(idCustomer)
+                val orders = repository.getOrders(idCustomer)
                 _orders.postValue(orders)
             } catch (e: Exception) {
                 Timber.e(e)
@@ -40,9 +41,18 @@ class OrderViewModel(context: Context) : ViewModel() {
     //fun getOrders(): List<Order> = _orders.filter { it.idCustomer == customer?.id }
 
     fun validateOrders() {
-        repository.updateStatus()
-
-        //customer?.status = Customer.Status.DELIVERED
-
+        CoroutineScope(Dispatchers.IO).launch {
+            _orders.value?.let {
+                repository.updateOrders(it)
+            }
+        }
     }
+
+    fun invertStatusOrder(order: Order){
+        order.status = when (order.status) {
+            Status.UNDELIVERED -> Status.DELIVERED
+            Status.DELIVERED -> Status.UNDELIVERED
+        }
+    }
+
 }

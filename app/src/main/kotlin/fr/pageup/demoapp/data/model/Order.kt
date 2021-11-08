@@ -1,11 +1,12 @@
 package fr.pageup.demoapp.data.model
 
 import android.os.Parcelable
-import androidx.databinding.adapters.Converters
-import androidx.room.*
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import androidx.room.TypeConverters
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
-import com.squareup.moshi.JsonQualifier
 import kotlinx.parcelize.Parcelize
 
 @TypeConverters(StatusConverter::class)
@@ -28,11 +29,10 @@ data class Order(
     @ColumnInfo(name = "id_customer_order")
         val idCustomer: Long,
 
+    @Transient
     @ColumnInfo(name = "status")
-    var status: Status
+    var status: Status = Status.UNDELIVERED
 ) : Parcelable {
-
-
 
 }
 

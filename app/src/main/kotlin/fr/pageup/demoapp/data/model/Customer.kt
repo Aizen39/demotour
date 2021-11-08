@@ -31,12 +31,8 @@ data class Customer(
     @ColumnInfo(name = "phone_c")
     val phone: String,
 
-    //@ColumnInfo(name = "status_c")
-    //var status: Status
-) : Parcelable {
+    @Transient
+    @ColumnInfo(name = "status_c")
+    var status: Status = Status.UNDELIVERED
 
-    /*enum class Status {
-        UNDELIVERED,
-        DELIVERED
-    }*/
-}
+) : Parcelable

@@ -5,17 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import androidx.recyclerview.widget.LinearLayoutManager
-import fr.pageup.demoapp.ui.adapters.OrderAdapter
-import fr.pageup.demoapp.ui.viewmodels.OrderViewModel
 import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import fr.pageup.demoapp.data.model.Order
 import fr.pageup.demoapp.databinding.FragmentOrderBinding
 import fr.pageup.demoapp.ui.adapters.OnItemClickListener
-import fr.pageup.demoapp.ui.viewmodels.CustomerViewModel
+import fr.pageup.demoapp.ui.adapters.OrderAdapter
+import fr.pageup.demoapp.ui.viewmodels.OrderViewModel
 
 
 class OrderFragment : Fragment(), OnItemClickListener<Order> {
@@ -59,7 +56,9 @@ class OrderFragment : Fragment(), OnItemClickListener<Order> {
         recyclerView.addItemDecoration(dividerItemDecoration)
         recyclerView.adapter = adapter
 
-        viewModel.fetchOrders()
+        viewModel.customer?.id?.let {
+            viewModel.fetchOrders(it)
+        }
 
         viewModel.orders.observe(viewLifecycleOwner) {
             it?.let {
@@ -74,7 +73,8 @@ class OrderFragment : Fragment(), OnItemClickListener<Order> {
     }
 
     override fun onItemClick(item: Order) {
-        item.status = Order.Status.DELIVERED
+        viewModel.invertStatusOrder(item)
+        adapter.notifyDataSetChanged()
     }
 
 }

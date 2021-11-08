@@ -18,14 +18,8 @@ interface OrderDao{
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(order: List<Order>)
 
-    @Query("SELECT * FROM table_customer WHERE id = :id")
-    fun getOrdersByIdCustomer(id:Long) : List<CustomerWithOrders>
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertStatus(status: LiveData<Status>)
-
-    @Query("SELECT status FROM table_order")
-    fun getStatus() : LiveData<Status>
+    @Query("SELECT * FROM table_order WHERE id_customer_order = :id")
+    fun getOrdersByIdCustomer(id:Long) : List<Order>
 
     @Query("SELECT * from table_order")
     fun getAll(): List<Order>

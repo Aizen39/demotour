@@ -23,7 +23,6 @@ android {
             keyPassword = KeyHelper.getValue(KeyHelper.KEY_PASS)
         }
     }
-    
 
     defaultConfig {
 

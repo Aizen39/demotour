@@ -2,11 +2,7 @@ package fr.pageup.demoapp.data.repositories
 
 import android.content.Context
 import fr.pageup.demoapp.data.local.DatabaseApp
-import fr.pageup.demoapp.data.model.Customer
 import fr.pageup.demoapp.data.model.Order
-import fr.pageup.demoapp.data.model.Status
-import fr.pageup.demoapp.data.model.StatusConverter
-import fr.pageup.demoapp.data.remote.CustomerApi
 import fr.pageup.demoapp.data.remote.OrderApi
 import fr.pageup.demoapp.data.remote.ServiceProvider
 
@@ -19,31 +15,19 @@ class OrderRepository(context: Context) {
     //database
     private val dao = DatabaseApp.getInstance(context).orderDao
 
-    fun getOrders() = dao.getAll()
+    fun getOrders(idCustomer: Long) = dao.getOrdersByIdCustomer(idCustomer)
 
-    fun getStatus() : Boolean {
-        var status : Status = Status.DELIVERED
-        if(status == Status.DELIVERED){
-            return true
-        }
-        return false
+    suspend fun updateOrders(orders: List<Order>) {
+        dao.insertAll(orders)
     }
 
-    fun updateStatus() {
-        if(getStatus()){
-            var status = dao.getStatus()
-            dao.insertStatus(status)
-        }
-    }
-
-    suspend fun update() {
-        var orders = dao.getAll()
+    suspend fun update(idCustomer: Long) {
+        var orders = dao.getOrdersByIdCustomer(idCustomer)
         if (shouldFetch(orders)) {
-            orders = api.getOrders(1)
+            orders = api.getOrders(idCustomer)
             dao.insertAll(orders)
         }
     }
-
 
     private fun shouldFetch(orders: List<Order>) = orders.isEmpty()
 

@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import fr.pageup.demoapp.R
 import fr.pageup.demoapp.data.model.Customer
+import fr.pageup.demoapp.data.model.Status
 import fr.pageup.demoapp.databinding.TourItemBinding
 
 
@@ -42,7 +43,7 @@ class CustomerAdapter(private var customers: List<Customer>, private val onItemC
             with(binding){
                 name.text = customer.name
                 address.text = customer.address
-                val imgRes = if (customer.status == Customer.Status.UNDELIVERED){
+                val imgRes = if (customer.status == Status.UNDELIVERED){
                     R.drawable.ic_hourglass
                 } else  {
                     R.drawable.ic_done

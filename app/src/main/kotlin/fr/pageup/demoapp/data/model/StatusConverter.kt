@@ -1,14 +1,10 @@
 package fr.pageup.demoapp.data.model
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
 import androidx.room.TypeConverter
 import androidx.room.TypeConverters
 
-
+@TypeConverters(StatusConverter::class)
 class StatusConverter{
-
-    lateinit var status: Status
 
     //convert String to Statue
     @TypeConverter
@@ -18,6 +14,8 @@ class StatusConverter{
     @TypeConverter
     fun fromStatus(value: Status) = value.name
 }
+
+
 
 
 

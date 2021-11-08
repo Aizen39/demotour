@@ -1,16 +1,12 @@
 package fr.pageup.demoapp.ui.adapters
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import fr.pageup.demoapp.R
-import fr.pageup.demoapp.data.model.Customer
 import fr.pageup.demoapp.data.model.Order
+import fr.pageup.demoapp.data.model.Status
 import fr.pageup.demoapp.databinding.OrderItemBinding
-import kotlin.coroutines.Continuation
-
 
 class OrderAdapter(
     private var orders: List<Order>,
@@ -21,7 +17,6 @@ class OrderAdapter(
     companion object {
         var last_position = 0
     }
-
 
     /** create and display each element from our model there, returning the viewholder class,
      * convert data into elements of recyclerview*/
@@ -48,7 +43,6 @@ class OrderAdapter(
      */
     override fun getItemCount() = orders.size
 
-
     fun update(orders: List<Order>) {
         this.orders = orders
         notifyDataSetChanged()
@@ -64,23 +58,15 @@ class OrderAdapter(
                 product.text = order.product
                 quantity.text = order.quantity.toString()
 
+                val res = when (order.status) {
+                    Status.UNDELIVERED -> R.drawable.shape_button_white
+                    Status.DELIVERED -> R.drawable.shape_button
+                }
+                container.setBackgroundResource(res)
                 container.setOnClickListener {
-                    if (order.status == Order.Status.UNDELIVERED) {
-                        onItemClickListener.onItemClick(order)
-                        container.setBackgroundResource(R.drawable.shape_button)
-                        order.status = Order.Status.DELIVERED
-                        //notifyItemChanged(last_position)
-                    } else {
-                        onItemClickListener.onItemClick(order)
-                        container.setBackgroundResource(R.drawable.shape_button_white)
-                        order.status = Order.Status.UNDELIVERED
-                        //notifyItemChanged(last_position)
-                    }
-
+                    onItemClickListener.onItemClick(order)
                 }
             }
         }
     }
-
-
 }

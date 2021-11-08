@@ -9,6 +9,6 @@ data class CustomerWithOrders(
     @Embedded
     val customer: Customer,
 
-    @Relation(parentColumn = "id",entityColumn = "id_customer_order")
-    val order: List<Order>
+    @Relation(parentColumn = "idCustomer",entityColumn = "id_customer_order")
+    val orders: List<Order>
 )
